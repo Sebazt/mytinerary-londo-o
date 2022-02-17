@@ -1,46 +1,59 @@
-import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/effect-coverflow";
+import "swiper/css/grid";
 import "swiper/css/pagination";
 
-import "../css/slides.css";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "../css/carrousel.css";
 
 // import required modules
-import { EffectCoverflow, Pagination } from "swiper";
+import { Grid, Autoplay, Pagination, Navigation } from "swiper";
 import cities from "./cities";
 
+// import required modules
 
-export default function CarrouselImg() {
+export default function App() {
   return (
+      <div className="swip" > 
     <>
       <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={"auto"}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
+        slidesPerView={2}
+        slidesPerGroup={2}
+        grid={{
+          rows: 2
         }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        spaceBetween={15}
+        pagination={{ clickable: true }}
+        navigation={true}
+        modules={[Grid, Pagination, Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false
+        }}
         className="mySwiper"
       >
-          {cities.map(city =>
+        
+
+        {cities.map(city =>
         <SwiperSlide>
-          <img src={city.image}  alt="Ciudad"/>
+          <img className="imagenes" src={city.image}  alt="Ciudad"/>
           <h3>{city.name}</h3>
         </SwiperSlide> 
-        
         )}
       </Swiper>
     </>
+    </div>
   );
 }
+

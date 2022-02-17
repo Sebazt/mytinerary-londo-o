@@ -1,17 +1,19 @@
-import logo from './logo.svg';
+
 import './App.css';
+import ResponsiveAppBar from './components/navbar';
+import RecipeReviewCard from './components/card';
+import CarrouselImg from './components/carrousel';
 
 
 
 function App() {
-  let team = "Tortles"
   
-
+  
   return (
     <>
-    
-    
-    
+     <ResponsiveAppBar/>
+      <RecipeReviewCard/>
+      <CarrouselImg/>
     </>
   );
 }

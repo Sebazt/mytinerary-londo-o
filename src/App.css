@@ -7,6 +7,8 @@
   pointer-events: none;
 }
 
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -56,8 +58,27 @@ h1{
 
 .swip{
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 90vh;
+  flex-flow: column wrap;
+  width: 80%;
+  height: 140vh;
+  margin: auto;
 }
 
+.footer{
+  display: flex;
+  flex-direction: column;
+  color: wheat;
+  background-color: #050607;
+  width: 100%;
+  min-height: 20vh;
+  padding: .5rem;  
+}
+
+.usuario-btn{
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+}
+
+.Navbar{
+  margin-bottom: 2rem ;
+}

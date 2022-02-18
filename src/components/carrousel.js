@@ -18,7 +18,7 @@ import "../css/carrousel.css";
 
 // import required modules
 import { Grid, Autoplay, Pagination, Navigation } from "swiper";
-import cities from "./cities";
+import Cities from "./cities";
 
 // import required modules
 
@@ -38,14 +38,14 @@ export default function App() {
         modules={[Grid, Pagination, Autoplay, Pagination, Navigation]}
         className="mySwiper"
         autoplay={{
-          delay: 2500,
+          delay: 4000,
           disableOnInteraction: false
         }}
         className="mySwiper"
       >
         
 
-        {cities.map(city =>
+        {Cities.map(city =>
         <SwiperSlide>
           <img className="imagenes" src={city.image}  alt="Ciudad"/>
           <h3>{city.name}</h3>

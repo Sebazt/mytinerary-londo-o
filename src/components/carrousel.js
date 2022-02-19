@@ -18,15 +18,34 @@ import "../css/carrousel.css";
 
 // import required modules
 import { Grid, Autoplay, Pagination, Navigation } from "swiper";
-import Cities from "./cities";
+import Cities from "./datos";
 
 // import required modules
 
-export default function App() {
+export default function CarrouselImg() {
   return (
       <div className="swip" > 
     <>
       <Swiper
+breakpoints={{
+  0: {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    grid:{
+      rows: 2,
+    },
+    spaceBetween:15,
+  },
+
+  768: {
+    slidesPerView: 2,
+        slidesPerGroup: 2,
+        grid:{
+          rows: 2,
+        },
+        spaceBetween:15,
+  }
+}}
         slidesPerView={2}
         slidesPerGroup={2}
         grid={{

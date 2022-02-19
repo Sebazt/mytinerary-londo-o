@@ -29,7 +29,7 @@ const cities =[
     {
       "id": 6,
       "image":"https://images.unsplash.com/photo-1433757741270-94a3bcadc2f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80",
-      "name": "Fiesta de las colectividades"  
+      "name": "Nueva Zelanda"  
     },
     {
       "id": 7,

@@ -1,11 +1,10 @@
 
 import './App.css';
 import NavBar from './components/navbar';
-import {BrowserRouter, Router, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from './components/footer';
+import FooterPag from './components/footer';
 import HomePag from './pages/home';
-
 
 
 
@@ -15,13 +14,19 @@ function App() {
   
   
   return (
-    <>       
-      <NavBar/> 
+    <BrowserRouter>
+    <div>       
+      <NavBar/>
+      <Routes>
         
-      <HomePag/>
+        <Route path='/' element={<HomePag/>}/>
+        <Route path='/home' element={<HomePag/>}/>
+        <Route path='*' element={<HomePag/>}/>  {/* si hay un error general */}
 
-      <Footer/>
-    </>
+      </Routes>
+      <FooterPag/>
+    </div>
+    </BrowserRouter>
   );
 }
 

@@ -14,9 +14,10 @@ import MenuItem from '@mui/material/MenuItem';
 import Logo from '../assets/logo.png';
 import {Link as LinkRouter} from 'react-router-dom'
 import Usuario from '../assets/usuario.png'
+import "../css/navbar.css"
 
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Home', 'Cities'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Navbar = () => {
@@ -39,12 +40,12 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" className="Navbar">
+    <AppBar position="sticky" sx={{backgroundColor:"#000"}} className="Navbar">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography>
+          {/* <Typography>
           <img src={Logo} alt="logo" width={100} />
-          </Typography>
+          </Typography> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton

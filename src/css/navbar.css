@@ -1,11 +1,57 @@
-.Navbar{     
-    color: #ccc;
-  }
+/* problema cuando añado click algún boton del nav, se desplaza */
+  .header {
+    position: fixed;    
+    width: 100%;
+    z-index: 100;
+    transition: .3s ease-in;
+    overflow: hidden;
+    
+}
+
+.header-bg{
+  background-color: rgba(0,0,0,.9);
+}
+
+.header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    margin: auto;
+    padding: 0 1rem;
+    text-decoration: none !important;
+}
+
 
 
 .usuario-btn{
   width: 3.7rem !important;
   height: 3.7rem !important;
+  
 }
 
-  
+
+.boton-header{  
+  text-decoration: none;
+  margin: 0 .5rem;
+  border-radius: 1rem;
+}
+
+.boton-header:hover{
+  text-decoration: underline;
+  color: #83c5be;
+  cursor: hand;
+}
+
+.boton-header:active{
+  text-decoration: underline;
+  color: #006d77;
+  cursor: wait;
+}
+
+.boton-a{
+  font-family: 'EB Garamond', serif !important;
+  font-weight: bold !important;
+  font-size: 1.5em !important;
+  color: #edf6f9 !important;
+}
+

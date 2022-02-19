@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,10 +13,11 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Usuario from '../assets/usuario.png'
 import "../css/navbar.css"
-import {Link as LinkRouter} from 'react-router-dom'
+import { Link as LinkRouter } from 'react-router-dom'
 
 
-const pages = ['Home', 'Cities'];
+
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Navbar = () => {
@@ -28,7 +29,7 @@ const Navbar = () => {
   };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-  };
+  }; 
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -38,23 +39,35 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
 
+  /* when window scrolling */
+  const [color, setColor] = useState(false)
+  const changeColor = () =>{
+    if(window.scrollY >= 200){
+      setColor(true)
+    } else{
+      setColor(false)
+    }
+  }
+
+  window.addEventListener('scroll', changeColor)
+
   return (
-    <AppBar position="sticky" sx={{backgroundColor:"#000"}} className="Navbar">
+    <div className={color ? 'header header-bg': 'header'}>
+    <AppBar position="sticky" sx={{ backgroundColor: "#0001" }} className="Navbar navbar">
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters >
           {/* <Typography>
           <img src={Logo} alt="logo" width={100} />
           </Typography> */}
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }} >
+            <IconButton /* boton hamburgesa */
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
-            >
+              color="inherit"            >
               <MenuIcon />
             </IconButton>
             <Menu
@@ -74,39 +87,42 @@ const Navbar = () => {
               sx={{
                 display: { xs: 'block', md: 'none' },
               }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+             >
+              {/* menu responsivo y funcional */}
+              <MenuItem >
+                <LinkRouter className='boton-header' to="home">Home</LinkRouter>
+              </MenuItem>
+
+              <MenuItem >
+                <LinkRouter className='boton-header'to="cities">Cities</LinkRouter>
+              </MenuItem>
+
             </Menu>
           </Box>
           <Typography
             variant="h6"
             noWrap
-            component="div"
+            component="div"            
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
 
-            ))}
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'center'} }}>
+
+            <LinkRouter className='boton-header' to="home">
+              <Button className='boton-a'>Home</Button>
+            </LinkRouter>
+
+            <LinkRouter className='boton-header' to="cities">
+              <Button className='boton-a'>Cities</Button>
+            </LinkRouter>
+
           </Box>
 
-          <Box  sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton className="usuario-btn" onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar className="usuario-btn" src={Usuario} alt="usuario"/>
+                <Avatar className="usuario-btn" src={Usuario} alt="usuario" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -135,6 +151,7 @@ const Navbar = () => {
         </Toolbar>
       </Container>
     </AppBar>
+    </div>
   );
 };
 export default Navbar;

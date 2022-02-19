@@ -1,20 +1,4 @@
 
-h1{
-  text-decoration: none;
-  font-size: 3em;
-  color: #fff;
-  font-weight: bold;
-}
-
-.boton{
-  border: 1px solid black;
-  background-color: seagreen;
-  border-radius: 50%;
-  padding: .5rem;
-}
-.boton:hover{
-  cursor: pointer;
-}
 
 .swip{
   display: flex;
@@ -24,18 +8,6 @@ h1{
   margin: auto;
 }
 
-.footer{
-  display: flex;
-  flex-direction: column;
-  color: wheat;
-  background-color: #050607;
-  width: 100%;
-  min-height: 20vh;
-  padding: .5rem;  
-}
 
-.usuario-btn{
-  width: 3.5rem !important;
-  height: 3.5rem !important;
-}
+
 

@@ -1,6 +1,11 @@
-.Navbar{
-    
-   
+.Navbar{     
     color: #ccc;
   }
+
+
+.usuario-btn{
+  width: 3.7rem !important;
+  height: 3.7rem !important;
+}
+
   

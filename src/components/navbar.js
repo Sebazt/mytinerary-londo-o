@@ -11,10 +11,9 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import Logo from '../assets/logo.png';
-import {Link as LinkRouter} from 'react-router-dom'
 import Usuario from '../assets/usuario.png'
 import "../css/navbar.css"
+import {Link as LinkRouter} from 'react-router-dom'
 
 
 const pages = ['Home', 'Cities'];

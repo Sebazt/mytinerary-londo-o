@@ -48,7 +48,7 @@ export default function FooterPag() {
                 <LinkRouter to="home" className="linkFooter">
                   Home
                 </LinkRouter>
-                <LinkRouter to="home" className="linkFooter">
+                <LinkRouter to="cities" className="linkFooter">
                   Cities
                 </LinkRouter>
               </div>

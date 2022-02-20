@@ -60,3 +60,18 @@ body {
 }
 
 
+
+
+/* -------------------- Breakpoint -1200  -------------------- */
+@media (max-width: 1200px){
+  .swip{
+    margin-top: 10rem !important;  
+  }
+}   
+
+/* -------------------- Breakpoint -1400  -------------------- */
+@media (max-width: 1360px){
+  .swip{
+    margin-top: 6rem;  
+  }
+}   

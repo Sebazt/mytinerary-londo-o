@@ -101,5 +101,63 @@ h6{
 }
 
 
+/* -------------------- Breakpoint -480  -------------------- */
+@media (max-width: 450px){  
+    .div-footer{
+        width: 100% ;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: transparent !important;
+    }
+
+    .divNum2{
+        width: 100%;
+    }
+
+    .divNum4, .divNum3{
+        display: none;
+    }
+
+}
 
 
+/* -------------------- Breakpoint -760  -------------------- */
+
+@media (max-width: 760px){ 
+    .div-footer{
+        width: 100% ;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: #83c5bf50;
+    }
+
+    .divNum2, .divNum3{
+        width: 100%;
+    }
+
+    .divNum4{
+        display: none;
+    }
+    
+}
+
+
+
+/* -------------------- Breakpoint -1000  -------------------- */
+@media (max-width: 1000px){
+    .div-footer{
+        width: 100% ;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: #83c5bf50;
+    }
+
+    
+
+    .divNum4{
+        display: none;
+    }
+}

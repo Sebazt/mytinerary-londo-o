@@ -1,7 +1,6 @@
 .contenedor-hero{
     width: 100%;
-    height: 70vh;
-    
+    height: 70vh;    
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -60,3 +59,111 @@
 .parrafo-hero{
     font-size: 2em;
 }
+
+
+/* -------------------- Breakpoint -480  -------------------- */
+
+@media (max-width: 450px){    
+
+    .image1,.image2{
+      display: none;
+    }
+
+    .contenedor-hero{
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 0;
+    align-content: center; 
+    
+    }
+
+    .buton-call{
+        width: 100%;
+        height: 100%;
+        
+        display: flex;
+        margin: 1rem 1rem;    
+        flex-direction: column;
+        text-align: justify;
+        margin-bottom: -3rem;
+        
+    } 
+
+    .titulo-hero{        
+        font-size: 3em !important;
+        align-self: center ;
+        text-decoration:underline;
+        
+    }
+
+    .parrafo-hero{
+        font-size: 1.5em;
+        width:90% !important;
+        
+    }    
+}
+
+/* -------------------- Breakpoint -760  -------------------- */
+
+@media (max-width: 760px){
+    .image1,.image2{
+        display: none;
+      }
+
+    .titulo-hero{        
+    font-size: 5em;
+    align-self: center;  
+    }
+
+    .parrafo-hero{
+        font-size: 1.5em;
+        width:100%;
+        
+    }
+
+    .buton-call{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        margin: 1rem 1rem;    
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: -3rem;        
+    }
+}
+
+
+
+
+/* -------------------- Breakpoint -1000 -------------------- */
+@media (max-width: 1000px){
+    .image2{
+        display: none;
+    }
+
+    .titulo-hero{        
+        font-size: 5em;
+        align-self: center;  
+    }
+
+    .parrafo-hero{
+        font-size: 1.5em;
+        width:100%;        
+    }
+
+    .buton-call{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        margin: 1rem 1rem;    
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: -3rem;        
+    }
+}
+
+
+/* -------------------- Breakpoint -1200 -------------------- */
+
+
+

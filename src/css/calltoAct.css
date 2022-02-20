@@ -29,3 +29,41 @@
 .botonaction:active{
     cursor: wait;
 }
+
+/* -------------------- Breakpoint -480  -------------------- */
+
+@media (max-width: 450px){ 
+
+    .container-call{
+        margin-bottom: 3rem;
+    }
+
+    .botonaction{
+        font-size: 1.5em !important;
+    }.container-call{
+        margin-bottom: 3rem;
+    }
+}
+
+
+/* -------------------- Breakpoint -760  -------------------- */
+
+@media (max-width: 760px){ 
+
+    
+
+    .botonaction{
+        font-size: 1.5em;
+    }
+}
+
+
+
+
+/* -------------------- Breakpoint -1000  -------------------- */
+@media (max-width: 1000px){
+    .botonaction{
+        font-size: 1.5em;
+        margin-bottom: 1rem;
+    }
+}

@@ -42,6 +42,14 @@ body{
     display: none;
   }
 
+  .swip{
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    height: 140vh;
+    margin: auto;
+        
+  }
 }
 
 /* -------------------- Breakpoint -760  -------------------- */

@@ -20,7 +20,7 @@ function HeroPag() {
                   <p className="parrafo-hero">"Find your perfect trip,
                     designed by insiders who know and love their cities!".</p>
                   <ButonCall/>
-                </div>
+              </div>
 
               <div className="image2">
               <img src={Viajeimg} alt="Mapa del mundo" className='imagen-hero' />

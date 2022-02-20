@@ -167,3 +167,11 @@
 
 
 
+/* -------------------- Breakpoint -1400  -------------------- */
+@media (max-width: 1380px){
+    
+
+    .contenedor-hero{
+        margin-bottom: 6rem;
+    }
+  }   

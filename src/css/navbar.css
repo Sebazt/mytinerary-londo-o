@@ -2,7 +2,7 @@
   .header {
     position: fixed;    
     width: 100%;
-    z-index: 100;
+    z-index: 50;
     transition: .3s ease-in;
     overflow: hidden;
     
@@ -29,7 +29,6 @@
   
 }
 
-
 .boton-header{  
   text-decoration: none;
   margin: 0 .5rem;
@@ -37,13 +36,13 @@
 }
 
 .boton-header:hover{
-  text-decoration: underline;
+  text-decoration: overline;
   color: #83c5be;
   cursor: hand;
 }
 
 .boton-header:active{
-  text-decoration: underline;
+  text-decoration: overline;
   color: #006d77;
   cursor: wait;
 }

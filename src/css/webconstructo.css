@@ -1,0 +1,11 @@
+.webconstru{
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    display:flex;
+    flex-direction: column;
+    background-image: url(../assets/construccion.png);
+    background-size: cover;
+    background-attachment: fixed;   
+}
+

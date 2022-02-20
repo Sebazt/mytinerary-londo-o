@@ -1,7 +1,8 @@
 
 import React from 'react';
 import "../css/videoHed.css";
-import Logo from '../assets/logo.png';
+
+import VideoHed from '../assets/video.mp4'
 
 
 
@@ -9,11 +10,17 @@ function VideoHeader() {
   
   
     return (
-      
-          <div className='video'>
-       
-            <img src={Logo} alt="logo" width={100} />  
-        
+          <div className='contenedor-VideoHome'>
+            {/* <img className='logotipo' src={Logo} alt="logo" width={100} />  */}
+            <h1 className='titulo-ppal'>Mytinerary</h1> 
+            <video 
+            autoPlay
+            loop
+            muted
+            className='video'
+            >              
+              <source src={VideoHed} type="video/mp4"/>
+            </video>     
           </div>
      
     );

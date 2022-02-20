@@ -1,6 +1,6 @@
 
 import CarrouselImg from '../components/carrousel';
-import CalltoAct from '../components/calltoAct';
+import HeroPag from '../components/hero';
 import VideoHed from '../components/videoHed';
 
 
@@ -14,7 +14,7 @@ function HomePag() {
        
               <VideoHed/>
 
-              <CalltoAct/>
+              <HeroPag/>
           
           
               <CarrouselImg/>

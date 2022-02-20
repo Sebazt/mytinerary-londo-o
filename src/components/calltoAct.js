@@ -3,11 +3,11 @@ import React from 'react';
 import { MDBBtn } from 'mdb-react-ui-kit';
 import {Link as LinkRouter} from 'react-router-dom'
 
-export default function App() {
+export default function ButonCall() {
   return (
-      <div className="container-video">
+      <div className="container-call">
         <LinkRouter to="cities">
-        <MDBBtn>Cities</MDBBtn>
+        <MDBBtn className="botonaction">Cities</MDBBtn>
         </LinkRouter>
         </div>  
   );

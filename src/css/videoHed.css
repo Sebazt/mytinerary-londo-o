@@ -1,5 +1,31 @@
+
 .video{
     width: 100%;
+    object-fit: cover;
     background-color: #e29578;
-    height: 60vh;
+    height: 100vh;
+    z-index: -1;
+    
+}
+
+.contenedor-VideoHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .logotipo{
+    position: absolute;
+    margin: .5rem 0;
+    margin-top: 5rem;
+} */
+
+.titulo-ppal{
+    position: absolute;
+    margin: .5rem 0;
+    margin-top: 7rem;
+    font-family: 'Tangerine', cursive;
+    color: #fff;
+    text-shadow: 1px 1px 10px #000;
+    font-size: 15em;
 }

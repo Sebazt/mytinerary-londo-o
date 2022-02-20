@@ -1,4 +1,105 @@
-.footer-texto{
-    background-color: blueviolet;
-    color: rgb(241, 239, 239);
+.div-footer{
+    background-color: #83c5bf50;
+    display: flex;
+    flex-direction: row;
+    
 }
+
+.redes{
+    color: #000; 
+    margin-bottom: 5rem;
+    text-align: center;
+    
+}
+
+.copyr{
+    font-size: 1.2em;
+    text-align: center;
+}
+
+
+.red-btn{
+    margin: .7rem;
+}
+
+.divNum4{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+ }
+
+
+
+ 
+.menu-footer{
+    flex-direction: column;
+    display: flex;
+}
+
+
+.linkFooter{
+    text-decoration: none;
+    color: #000;
+    margin: .5rem;
+    align-self: center;
+    font-size: 1.2em;
+}
+
+.linkFooter:hover{
+    color: #000;
+}
+
+
+h6{
+    font-size: 1.2em;
+    color: #000;
+    align-self: center;
+    font-weight: bold;
+}
+
+
+
+.divNum3{
+   width: 10%;   
+   display: flex;
+   flex-direction: column;
+   
+}
+
+
+
+/* -------------- */
+
+.divNum1{
+    
+    width: 25%;
+    height: auto;
+}
+
+.logofooter{
+    width: 100%;
+}
+
+/* -------------- */
+
+.divNum2{
+    width: 35%;
+    font-size: 1.2em;
+    text-align: center;
+    
+
+}
+
+.subh6{
+    text-align: center;
+    font-weight: bold;
+}
+
+.autor{
+    font-weight: bold;
+    margin-top: 3rem;
+}
+
+
+
+

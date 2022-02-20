@@ -60,14 +60,14 @@ breakpoints={{
           delay: 4000,
           disableOnInteraction: false
         }}
-        className="mySwiper"
+        
       >
         
 
         {Cities.map(city =>
-        <SwiperSlide>
+        <SwiperSlide className="swiper-slide">
           <img className="imagenes" src={city.image}  alt="Ciudad"/>
-          <h3>{city.name}</h3>
+          <h3 className="subtitulo-cartas">{city.name}</h3>
         </SwiperSlide> 
         )}
       </Swiper>

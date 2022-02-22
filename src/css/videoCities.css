@@ -1,0 +1,14 @@
+.video-city{
+    display: flex;    
+    min-height: 30vh;        
+}
+
+.videoC{
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;    
+}
+
+
+
+

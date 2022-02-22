@@ -1,5 +1,9 @@
+import React from 'react';
+import CallHome from '../components/callHome';
+import CardsCities from '../components/cardsCities';
+import HeaderCities from '../components/headerCities';
+import MainCities from '../components/mainCities';
 
-import Webconstructo from '../components/webconstruction';
 
 
 
@@ -9,7 +13,14 @@ function PagCities() {
     return (
       
           <div>
-           <Webconstructo/>                           
+              <HeaderCities/>
+
+              <MainCities/> 
+
+              <CardsCities/>
+
+              <CallHome/>
+                  
           </div>
      
     );

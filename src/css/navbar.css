@@ -19,6 +19,7 @@
     margin: auto;
     padding: 0 1rem;
     text-decoration: none !important;
+    
 }
 
 
@@ -32,13 +33,14 @@
 .boton-header{  
   text-decoration: none;
   margin: 0 .5rem;
-  border-radius: 1rem;
+  border-radius: 1rem;  
 }
 
 .boton-header:hover{
   text-decoration: overline;
   color: #83c5be;
   cursor: hand;
+  
 }
 
 .boton-header:active{
@@ -52,5 +54,9 @@
   font-weight: bold !important;
   font-size: 1.5em !important;
   color: #edf6f9 !important;
+  text-shadow: 1px 1px 5px #000;
 }
 
+.boton-a:hover{
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.521);
+}

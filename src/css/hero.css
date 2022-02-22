@@ -12,8 +12,7 @@
 .image1{
     display: flex;
     width: 30%;
-    height: 90%;
-    
+    height: 90%;    
     margin: 1rem 0 0 1.5rem;
     justify-content: center;
     align-items: center;
@@ -32,8 +31,7 @@
 .image2{
     display: flex;
     width: 30%;
-    height: 90%;
-    
+    height: 90%;    
     margin: 1rem 2rem 0 0;
     justify-content: center;
     align-items: center;

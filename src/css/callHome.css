@@ -1,0 +1,48 @@
+
+.home-call{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-callhome{
+    width: 6.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background: #006d77;
+    color: white;
+    font-size: 2em !important;
+    border: none;
+    border-radius: 0.625em;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.button-callhome:hover{
+    color: black;
+}
+
+.button-callhome:after{
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 1s;   
+}
+
+.button-callhome:hover:after{
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 1s;
+    transition: all 1.5s;  
+}

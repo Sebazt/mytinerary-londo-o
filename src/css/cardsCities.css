@@ -1,0 +1,7 @@
+.cards-city{
+    width: 100%;
+    min-height: 50vh;
+    background-color: springgreen;
+    
+    display: flex;
+}

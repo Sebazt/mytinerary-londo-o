@@ -19,8 +19,7 @@ import "../css/carrousel.css";
 // import required modules
 import { Grid, Autoplay, Pagination, Navigation } from "swiper";
 import Cities from "./datos";
-
-import {Link as LinkRouter} from "react-router-dom"
+import {Link as LinkRouter} from "react-router-dom";
 
 // import required modules
 
@@ -69,9 +68,8 @@ breakpoints={{
         {Cities.map(city =>
         <SwiperSlide className="swiper-slide">
           <img className="imagenes" src={city.image}  alt="Ciudad"/>
-          <LinkRouter to={`details/${city.id}`}>
+          
           <h3 className="subtitulo-cartas">{city.name}</h3>
-          <LinkRouter/>
         </SwiperSlide> 
         )}
       </Swiper>

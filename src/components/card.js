@@ -4,7 +4,7 @@ import "../css/card.css"
 /* import Ejemplo from '../assets/eren.jpeg' */
 import Cities from "./datos";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import {Link as LinkRouter} from "react-router-dom"
+import {Link as LinkRouter} from "react-router-dom";
 
 
 

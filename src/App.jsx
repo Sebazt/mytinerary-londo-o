@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import FooterPag from './components/footer';
 import HomePag from './pages/home';
 import PagCities from './pages/cities';
+import CardDetails from './components/detalle';
 
 
 
@@ -24,6 +25,9 @@ function App() {
         <Route path='/home' element={<HomePag/>}/>
         <Route path='*' element={<HomePag/>}/>  {/* si hay un error general */}
         <Route path='/cities' element={<PagCities/>}/>
+        <Route path='/cities/details/:id' element={<CardDetails/>}/>
+
+
       </Routes>
       <FooterPag/>
     </div>

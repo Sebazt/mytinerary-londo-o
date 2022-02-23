@@ -1,5 +1,90 @@
 .card{
-    width: 30%;
-    height: 30%;
-    background-color: rgb(21, 196, 196);
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 3rem;
+    width: 35%;
+    height: 60vh;
+    background: radial-gradient(#111 50%, #000 100%);
+    overflow: hidden;
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 15px #0a0a0a;
+}
+
+
+
+.img-card{
+    max-width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.card .img-card{
+    transform: scale(1.3);
+    transition: all 0.3s ease-out;
+}
+
+.card:hover .img-card{
+    transform: scale(1.2) translateY(-20px);
+    opacity: 0.3;
+}
+
+
+.description{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.description>h3{
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin: 0 0 1.2rem;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    text-shadow: 1px 1px 10px #fff;
+}
+
+.description>h4{
+    opacity: 0;
+    transition: all 0.3s ease-out 0.2s;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 10px #000;
+}
+
+
+.description .boton-city{
+    color: #fff;
+    background-color: #006d77;
+    display: inline-block;
+    padding: .3rem .5rem;
+    text-decoration: none;
+    border-radius: .5rem;
+    opacity: 0;
+    transition: all 0.3s ease-out 0.4;
+    font-size: 1.2rem;
+    border: none;
+}
+
+.description .boton-city:hover{
+    background: #83c5be;
+    color: #000 !important;
+}
+
+.card:hover .description h3{
+    opacity: 1;
+    color: #fff;
+}
+
+.card:hover .description h4{
+    opacity: 1;
+    color: #fff;
+}
+
+.card:hover .description .boton-city{
+    opacity: 1;
 }

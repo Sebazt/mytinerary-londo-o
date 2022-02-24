@@ -14,7 +14,7 @@ function CardDetails() {
     Cities.filter((city) => city.id == id)
   );
   /* No hay necesidad de usar el seteo. */
-
+  
   return (
     <>
       {card.map((city) => (

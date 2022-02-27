@@ -18,10 +18,7 @@ function MainCities() {
 
               <div className='img-city'>
                 <img src={MapWorld} alt="Map of world" className='imageWorld'/>   
-              </div>  
-             
-              <SearchCities/>
-              
+              </div>               
           </section>
      
     );

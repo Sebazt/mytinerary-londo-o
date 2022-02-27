@@ -12,7 +12,7 @@ const app = express()
 app.use(cors());
 app.use(express.json());
 /* express.json este middleware, es un metodo de express permite a nuestra api establecer respuestas en formato JSON para que puedan ser interpretadas por el frontend */
-app.use('/api',Router)
+app.use('/api',Router)  /* Establezco ruta */
 
 
 app.listen (PORT, () => console.log ("server ready on port" + PORT))

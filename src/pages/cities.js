@@ -1,6 +1,6 @@
 /* import React from 'react'; */
 import CallHome from '../components/callHome';
-import CardsCities from '../components/cardsCities';
+
 import HeaderCities from '../components/headerCities';
 import MainCities from '../components/mainCities';
 import React from "react";
@@ -8,23 +8,35 @@ import { useEffect,useState } from "react";
 import axios from "axios"
 import "../css/searchCities.css";
 import SavedSearchIcon from '@mui/icons-material/SavedSearch';
-
-
+import Card from '../components/card';
 
 
 function PagCities() {  
-    const [cities, setCities] = useState()
-    
-    useEffect(()=>{
-    window.scrollTo(0, 0)
-    /* allcities es el entpoint */
-    axios.get("http://localhost:4000/api/allcities")
-    .then(response=>setCities(response.data.response.ciudades))
-      /* llamada a la api y se setea */
 
-},[])
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  
+  const [input, setInput] = useState();
+  const [apidata, setApiData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/api/allcities")
+      .then((respuesta) => setApiData(respuesta.data.response.ciudades));
+}, []);
+
+      function filterCards(event) {
+      setInput(
+      apidata.filter((city) =>
+        city.name
+          .toLowerCase()
+          .startsWith(event.target.value.toLowerCase().trim())
+      )
+    );
+  }
+
+
     return (
       
           <div>
@@ -38,16 +50,16 @@ function PagCities() {
                               <div className='btn btn-common'>
                                     <SavedSearchIcon className='fas fa-search'/>
                               </div>
-                              <input type='text' className='input' placeholder='Search...'/>
+                              <input type='text' onKeyUp={filterCards} className='input' placeholder='Search...'/>
                         </div>
                   </div>
               </div>
 
               {/* defino la propiedad cities para pasarla a los componentes hijos como props, en este caso cardscities */}
-              <CardsCities cities={cities}/> 
-
+              
+              <Card search={input}/>
               <CallHome/>
-                  
+              
           </div>
      
     );

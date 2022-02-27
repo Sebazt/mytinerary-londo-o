@@ -1,19 +1,30 @@
 import React from 'react';
 import "../css/card.css"
+import "../css/cardsCities.css"
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {Link as LinkRouter} from "react-router-dom";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios"
+import NoFound from './cardsCities';
 
 
 
 function Card(props) {  
-    const cities = props.cities
+    const [data, setData] = useState();
+    useEffect(() => {
+    if (props.search === undefined) {
+      axios
+        .get("http://localhost:4000/api/allcities")
+        .then((respuesta) => setData(respuesta.data.response.ciudades));
+    } else {
+      setData(props.search);
+    }
+    }, [props.search]);
     
-    /* aquí con las propiedades ya toma el valor para hacer el map, y a s vez incluyo un operador ternario */
     return (
-      <>
-      {cities?.map(city=>
+      <div className='cards-city'>
+      {data?.length !== 0 ? (
+          data?.map((city) => (
           <div className='card'>
               <img src={city.image} alt="ejemplo" className='img-card' /> 
               <div className='description'>
@@ -27,10 +38,12 @@ function Card(props) {
                     </LinkRouter>
               </div>        
           </div>
+      ))
+      ) : (
+        <NoFound/>       
       )}
-       </>
-     
+      </div>
     );
-  }
+}
   
   export default Card;

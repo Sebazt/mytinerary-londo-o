@@ -1,20 +1,21 @@
-
+import Cat from '../assets/cat.png'
 import React from 'react';
-import "../css/cardsCities.css"
-import Card from './card';
+import "../css/nofound.css"
 
 
-function CardsCities(props) {
-    const cities = props.cities
-    /* con la constante definidad y los valores de ciudades guardadas en cities la utilizo como pros, y a su vez se la doy como propiedad al otro componente hijo, llamado card */
+
+function NoFound () {
+    
     return (
       
-          <div className='cards-city'>
-              <Card cities={cities}/>
-                                      
+          <div className='found'>
+              <h1 className='tituloCard1'>Opps, We are sorry<br/>
+              We can't find your city
+              </h1>   
+              <img src={Cat} alt="Git-hub" className='imageCat'/>                         
           </div>
             
     );
   }
   
-  export default CardsCities;
+  export default NoFound;

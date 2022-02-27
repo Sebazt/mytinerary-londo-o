@@ -3,15 +3,31 @@ import CallHome from '../components/callHome';
 import CardsCities from '../components/cardsCities';
 import HeaderCities from '../components/headerCities';
 import MainCities from '../components/mainCities';
-import React, {useEffect} from "react";
+import React from "react";
+import { useEffect,useState } from "react";
+import axios from "axios"
 
 
 
 
 function PagCities() {
-    useEffect(() => { /* hook  */
-        window.scrollTo(0, 0)  /* scrolear en eje x y eje y  */
-      }, [])
+
+  const [apiCiudades, setApiCiudades ]= useState([])
+
+  useEffect(()=>{
+
+
+    /* allcities es el entpoint */
+    axios.get("http://localhost:4000/api/allcities")
+    .then(response=>console.log(response.data.response.ciudades))
+
+
+  },[])
+
+
+  useEffect(() => { /* hook  */
+      window.scrollTo(0, 0)  /* scrolear en eje x y eje y  */
+    }, [])
   
     return (
       

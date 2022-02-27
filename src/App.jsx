@@ -12,6 +12,8 @@ import CardDetails from './components/detalle';
 
 
 
+
+
 function App() {
   
   

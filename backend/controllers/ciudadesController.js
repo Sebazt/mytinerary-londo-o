@@ -28,6 +28,20 @@ const ciudadesController = {
                       pais:pais
         }).save()
         .then((respuesta) => res.json({respuesta}))
-    }
-}
+    },
+
+    deleteCity: async (req, res) => {
+    const id = req.params.id;
+        /* ´Params toma el que viene .id y lo guarda en la constante , dps con la fnción de findOne, busca ese id que vino como parametro y lo va eliminar */
+    await Ciudades.findOneAndDelete({ _id: id });
+  },
+
+    modifyCity: async (req, res) => {
+    const id = req.params.id; /* recibe los datos y el parametro guardandolo en el id para poder identifcar la ciudad  */
+    const ciudad = req.body.dataInput;
+
+    let ciudadb = await Ciudades.findOneAndUpdate({ _id: id }, ciudad);    
+  },
+};
+
 module.exports = ciudadesController

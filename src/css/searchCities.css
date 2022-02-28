@@ -52,10 +52,12 @@
     cursor: pointer;
     border-radius: 50%;
     margin-right: -2px;
+    cursor: default;
 }
 
 .search-wrap .search-box .btn:hover{
     background-color: #83c5be;  /* Color up Azul. */
+    cursor: default;
 }
 
 

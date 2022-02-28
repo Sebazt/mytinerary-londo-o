@@ -28,7 +28,7 @@ export const  cargarDatos = async (dataInput) => {
 
 
 export const  eliminarCiudad = async (id) => {
-    console.log(id)
+    /* No lo pasa por el body sino como un parametro, el elemento es el id y no allcities como en los demás. aquí se esta llamando a axios en su metodo.delete */
     try {
         let data = await axios.delete(`http://localhost:4000/api/allcities/${id}`)
         return data
@@ -37,7 +37,7 @@ export const  eliminarCiudad = async (id) => {
         throw error
     }
 }
-export const  modificarCiudad = async (id,dataInput) => {
+export const  modifyCity = async (id,dataInput) => {
     console.log(id, dataInput)
     try {
         let data = await axios.put(`http://localhost:4000/api/allcities${id}`, {dataInput})

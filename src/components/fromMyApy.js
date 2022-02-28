@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import  {getAllCities,cargarDatos, eliminarCiudad, modificarCiudad}  from '../apiCalls'
+import  {getAllCities,cargarDatos, eliminarCiudad, modifyCity}  from '../apiCalls'
 
 /* Este componente se ubica en la app con fines de testear algunos controladores, pero no hace parte oficial del mismo. Antes de entregar el proyecto completo, se organizara  */
 
@@ -36,9 +36,8 @@ const modificarDB = (event) => {
       descripcion:data.get('Descripcion')
     };
     
-    modificarCiudad(modid, dataInput)
+    modifyCity(modid, dataInput)
     setReload(!reload)
-console.log(dataInput)
   };
 
 const handleSubmit = (event) => {
@@ -61,7 +60,7 @@ getAllCities()
 .then(response=>setCities(response.data.response.ciudades))
 
 },[reload])
-
+  /* reload se actuliza cadda vez que modifycity cambie */
     return(
 <div>
 

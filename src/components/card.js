@@ -14,7 +14,7 @@ function Card(props) {
     useEffect(() => {
     if (props.search === undefined) {
       axios
-        .get("http://localhost:4000/api/allcities")
+        .get("http://localhost:4000/api/allcities") /* ´Con .get obtengo el dato de la bd */
         .then((respuesta) => setData(respuesta.data.response.ciudades));
     } else {
       setData(props.search);
@@ -33,7 +33,7 @@ function Card(props) {
                     
                     {/* así se saca el id dinamicamente a través de un linRouter */}
 
-                    <LinkRouter to={`details/${city.id}`}>
+                    <LinkRouter to={`details/${city._id}`}>
                     <button className='boton-city'>See more</button>
                     </LinkRouter>
               </div>        

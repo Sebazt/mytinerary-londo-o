@@ -2,10 +2,12 @@
 const Router = require('express').Router()
 
 const ciudadesController = require('../controllers/ciudadesController')
-const {obtenerCiudades} = ciudadesController
+const {obtenerCiudades, loadCity} = ciudadesController
 
 /* a través del metodo .get se obtiene los datos que yo requiera */
 Router.route('/allcities')
 .get(obtenerCiudades)
+.post(loadCity) /*  */
+
 
 module.exports = Router

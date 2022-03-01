@@ -10,7 +10,7 @@
 
 .button-callhome{
     width: 6.5em;
-    height: 2.3em;
+    height: 2em;
     margin: 0.5em;
     background: #006d77;
     color: white;
@@ -45,4 +45,49 @@
     transform: skewX(-45deg) scale(1, 1);
     -webkit-transition: all 1s;
     transition: all 1.5s;  
+}
+
+
+/* -------------------- Breakpoint -480  -------------------- */
+@media (max-width: 480px){
+    .home-call{
+        width: 100%;
+        margin: 1.5rem auto;
+        height: 15vh;
+    }
+
+    .button-callhome{
+        height: 80%;
+        font-size: 1.8em !important;
+    }
+    
+}
+
+/* -------------------- Breakpoint -760  -------------------- */
+@media (max-width: 760px){
+    .home-call{
+        width: 100%;
+        margin: 1rem auto;
+        height: 20vh;
+    }
+
+    .button-callhome{
+        height: 80%;
+    }
+}
+
+
+
+
+/* -------------------- Breakpoint -1000 -------------------- */
+@media (max-width: 1000px){
+    .button-callhome{
+        height: 80%;
+    }
+}
+
+
+/* -------------------- Breakpoint -1200 -------------------- */
+@media (max-width: 1200px){
+    
 }

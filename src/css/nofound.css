@@ -26,3 +26,85 @@
   padding: .5rem;
   box-shadow: 1px 1px 13px #0a0a0a;
 }
+
+/* -------------------- Breakpoint -480  -------------------- */
+@media (max-width: 480px){
+    .found{
+      
+      min-height: 50vh;
+      width: 100%;
+    }
+
+    .imageCat{
+      display: none;
+    }
+
+    .tituloCard1{
+      font-size: 3em;
+      text-align: center;
+      width: 80%;
+    }
+}
+
+
+
+/* -------------------- Breakpoint -760  -------------------- */
+@media (max-width: 760px){
+    .found{
+      
+      min-height: 50vh;
+      width: 100%;
+    }
+
+    .imageCat{
+      display: none;
+    }
+
+    .tituloCard1{
+      font-size: 3em;
+      text-align: center;
+      width: 80%;
+    }
+}
+
+
+
+
+/* -------------------- Breakpoint -1000 -------------------- */
+@media (max-width: 1000px){
+    .found{
+      
+      min-height: 50vh;
+      width: 100%;
+    }
+
+    .imageCat{
+      display: none;
+    }
+
+    .tituloCard1{
+      font-size: 3em;
+      text-align: center;
+      width: 80%;
+    }
+}
+
+
+/* -------------------- Breakpoint -1050 -------------------- */
+@media (max-width: 1050px){
+    .found{
+      
+      min-height: 50vh;
+      width: 100%;
+    }
+
+    .imageCat{
+      display: none;
+    }
+
+    .tituloCard1{
+      font-size: 3em;
+      text-align: center;
+      width: 80%;
+    }
+}

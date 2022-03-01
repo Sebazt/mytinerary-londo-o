@@ -8,7 +8,6 @@
 .subtitle-city{
     width: 100%;
     height: 20vh;
-    
     margin: 1rem;   
     display: flex;
     justify-content: center;
@@ -37,4 +36,86 @@
     width: 70%;
     height: 100%;
     filter: brightness(0.8)
+}
+
+/* -------------------- Breakpoint -480  -------------------- */
+@media (max-width: 480px){
+    .main-city{
+      width: 100%;
+      height: 10vh;
+      display: flex;
+      margin: 0 auto;
+    }
+
+    .subtitle-city{
+        width: 90%;
+        height: 100%;
+        align-self: center;
+        text-align: center;
+        
+    }
+
+    .subtitle-city>h2{
+    font-size: 3em;
+    }
+
+    .img-city{
+        display: none;
+    }
+    
+}
+
+/* -------------------- Breakpoint -760  -------------------- */
+@media (max-width: 760px){
+    .main-city{
+      width: 100%;
+      height: 10vh;
+      display: flex;
+      margin: 0 auto;
+    }
+
+    .subtitle-city{
+        width: 90%;
+        height: 100%;
+        align-self: center;
+        text-align: center;
+        
+    }
+
+    .subtitle-city>h2{
+    font-size: 3em;
+    }
+
+    .img-city{
+        display: none;
+    }
+}
+
+
+
+
+/* -------------------- Breakpoint -1000 -------------------- */
+@media (max-width: 1000px){
+    .main-city{
+      display: flex;
+      margin: 0 auto;
+    }
+
+    .subtitle-city{
+        align-self: center;
+        text-align: center;
+        
+    }
+
+    .subtitle-city>h2{
+    font-size: 3.8em;
+    }
+
+    
+}
+
+
+/* -------------------- Breakpoint -1200 -------------------- */
+@media (max-width: 1200px){
+    
 }

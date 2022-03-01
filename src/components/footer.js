@@ -57,7 +57,7 @@ export default function FooterPag() {
             <div className='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 divNum4'>
               <h6 className='text-uppercase fw-bold mb-4'>Social red</h6>
               <div className="redes">
-                <a href='"https://www.linkedin.com/in/juan-sebastian-londo%C3%B1o-cossio-9444781b7/' target="__BLANK" className='me-4 text-reset red-btn'>
+                <a href='https://www.linkedin.com/in/juan-sebastian-londo%C3%B1o-cossio-9444781b7/' target="__BLANK" className='me-4 text-reset red-btn'>
                   <LinkedInIcon />
                 </a>
                 <a href='https://github.com/Sebazt' target="__BLANK" className='me-4 text-reset'>

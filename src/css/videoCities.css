@@ -10,5 +10,53 @@
 }
 
 
+/* -------------------- Breakpoint -480  -------------------- */
+@media (max-width: 480px){
+    .video-city{
+    display: flex;    
+    min-height: 70vh;
+    
+       
+}
 
+    .videoC{
+    width: 100%;
+    min-height: 100%; 
+}
+    
+}
+
+/* -------------------- Breakpoint -760  -------------------- */
+@media (max-width: 760px){
+    .video-city{
+    display: flex;    
+    min-height: 90vh;        
+}
+
+    .videoC{
+    width: 100%;
+    height: 100%; 
+}
+}
+
+
+
+
+/* -------------------- Breakpoint -1000 -------------------- */
+@media (max-width: 1000px){
+    .video-city{
+    display: flex;           
+}
+
+    .videoC{
+    width: 100%;
+    height: 100%; 
+}
+}
+
+
+/* -------------------- Breakpoint -1200 -------------------- */
+/* @media (max-width: 1200px){
+    
+} */
 

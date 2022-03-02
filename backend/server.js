@@ -1,13 +1,14 @@
+/* aquí se entrelaza toda la comunicación entre el frontend y backend */
 require('dotenv').config()
-const cors = require( 'cors')
+const cors = require( 'cors') /* cors, permite acceder a recursos desde un servidor dif */
 const express = require("express")
 require("./config/database")
-const Router = require('./routes/routes')
+const Router = require('./routes/routes') /* requiero mis rutas  ruta num 4 */
 const PORT = 4000
 
 const app = express()
 
-/* midleware, son servicios que utiliza nuestra api, para establecer diferentes comportamientos  se encarga de gestionar los datos. por ejemplo las rutas, para establecer los controladores */
+/* midleware, son servicios que utiliza nuestra api, para establecer diferentes comportamientos  se encarga de gestionar los datos. por ejemplo las rutas, para establecer los controladores  en este caso son las rutas y desde ahí utilizar los controladores*/
 
 app.use(cors());
 app.use(express.json());

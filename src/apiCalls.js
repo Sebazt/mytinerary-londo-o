@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-/* en este archivo se centralizan todos los llamados axios para generar mayor orden en el proyc. */
+/* en este archivo se centralizan todos los llamados a la api para generar mayor orden en el proyc. */
 
 /* se esta esta función asincrona  y a través del await se hace el llamado a la api para retornar el valor del data */
 export const  getAllCities = async () => {

@@ -9,7 +9,7 @@ import NoFound from './cardsCities';
 
 
 
-function Card(props) {  
+function Card(props) {  /* acoje las props del padre citie.pag */
     const [data, setData] = useState();
     useEffect(() => {
     if (props.search === undefined) {
@@ -19,11 +19,11 @@ function Card(props) {
     } else {
       setData(props.search);
     }
-    }, [props.search]);
+    }, [props.search]); /* para atualizar el valor de una variable aqui se declara la variable de cambio, esto es para evitar un loop */
     
     return (
       <div className='cards-city'>
-      {data?.length !== 0 ? (
+      {data?.length !== 0 ? ( /* "?" crea mayor exactitud */
           data?.map((city) => (
           <div className='card'>
               <img src={city.image} alt="ejemplo" className='img-card' /> 

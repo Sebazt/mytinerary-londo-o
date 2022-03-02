@@ -13,7 +13,7 @@ import Card from '../components/card';
 
 function PagCities() {  
 
-    useEffect(() => {
+    useEffect(() => { /* ínicialización de variables  */
     window.scrollTo(0, 0);
   }, []);
 
@@ -57,7 +57,7 @@ function PagCities() {
 
               {/* defino la propiedad cities para pasarla a los componentes hijos como props, en este caso cardscities */}
               
-              <Card search={input}/>
+              <Card search={input}/> {/* props */}
               <CallHome/>
               
           </div>

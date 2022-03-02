@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import  {getAllCities,cargarDatos, eliminarCiudad, modifyCity}  from '../apiCalls'
+import  {getAllCities, cargarDatos, eliminarCiudad, modifyCity}  from '../apiCalls'
 
 /* Este componente se ubica en la app con fines de testear algunos controladores, pero no hace parte oficial del mismo. Antes de entregar el proyecto completo, se organizara  */
 
@@ -28,7 +28,6 @@ function deleteCiudad(id){
 const modificarDB = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
     
     var dataInput ={
       nombre: data.get('Ciudad'),
@@ -41,9 +40,8 @@ const modificarDB = (event) => {
   };
 
 const handleSubmit = (event) => {
-    event.preventDefault(); /* new me crea una instancia nueva como constructor*/
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
+    event.preventDefault(); /* new me crea una instancia nueva como constructor .preve... es para que no refresque la pagina*/
+    const data = new FormData(event.currentTarget);    
     /* cuando se hace el submit se envia en el parametro event, y el preventDefault es para que no recargue la pág.  */
     var dataInput ={
       ciudad: data.get('Ciudad'),

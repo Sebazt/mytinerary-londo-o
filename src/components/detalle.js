@@ -6,11 +6,12 @@ import { useParams } from "react-router-dom";
 import WebConstruction from '../assets/webConstruction.png'
 import "../css/details.css";
 import axios from 'axios'
+import CallHome from '../components/callHome';
 
 
 
 function CardDetails() {
-  const { id } = useParams(); /* retorna un objeto de forma dinamica */
+  const { id } = useParams(); /* metodo de react-router-dom retorna un objeto de forma dinamica */
   const [card, setCard] = useState()
     
   useEffect(()=>{

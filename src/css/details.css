@@ -1,23 +1,81 @@
-.containerDetails{
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #e29578;
+/* ---------------header details ----------------*/
+.container-fatherdetails{
+   display: flex;
+   flex-flow: column wrap;
+   width: 100%;
+   min-height: 100vh;
+   /* background-color: #e29578; */
 }
 
-.img-web{
+.card1{
     width: 100%;
-    object-fit: scale-down;
-    filter: brightness(0.9);
+    height: 55vh;
+    background-attachment: fixed;  
+      
 }
 
-.contrution{
-    width: 40%;
-    height: 50vh;
-    margin: 2rem 1rem;
+.img-citydetails{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     
 }
 
+.title-details{
+    position: absolute;
+    margin-left: 25rem;
+    margin-top: 8rem;
+    font-family: 'Tangerine', cursive;
+    color: #fff;
+    text-shadow: 1px 1px 10px #000;
+    font-size: 10em;
+    background: linear-gradient(235deg, #83c5c000, #0f0c217e, #e2947800);
+    border-radius: 2rem;
+    height: 22vh;
+    width: auto;
+}
+
+/* ---------------main imgs ----------------*/
+.maindetails{
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    flex-wrap: row wrap;
+    /* background-color: yellow; */
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    margin: 1rem 0;
+    
+}
+
+.img-detailsmoto{
+    width: 30%;
+    height: 100%;
+    color: #006d77;
+    text-shadow: 1px 1px 1px rgb(7, 7, 7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #000; */
+}
+
+.h2-details{
+    margin: .5rem;
+    font-size: 3em;
+    
+}
+
+.bike{
+    width: 50%;
+     height: 50%;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+}
+
+.bandera{
+    width: 50%;
+    height: 50%;
+}

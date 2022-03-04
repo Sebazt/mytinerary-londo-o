@@ -1,4 +1,6 @@
 /* aquí se entrelaza toda la comunicación entre el frontend y backend */
+/* la conexión entre el back y el fron se lleva a cabo a través de una llamada axios definida en la ruta */
+
 require('dotenv').config()
 const cors = require( 'cors') /* cors, permite acceder a recursos desde un servidor dif */
 const express = require("express")

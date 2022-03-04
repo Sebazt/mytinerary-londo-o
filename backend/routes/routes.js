@@ -12,6 +12,8 @@ Router.route('/allcities') /* endpoint de la api. */
 
 Router.route('/allcities/:id')
 .delete(deleteCity) /* a través del endpoint(linea 13) se hacen los metodos del, y put */
-.put(modifyCity)
+.put(modifyCity) /* put modifica--- */
 
 module.exports = Router
+
+

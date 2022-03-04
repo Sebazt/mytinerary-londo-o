@@ -58,7 +58,7 @@ getAllCities()
 .then(response=>setCities(response.data.response.ciudades))
 
 },[reload])
-  /* reload se actuliza cadda vez que modifycity cambie */
+  
     return(
 <div>
 

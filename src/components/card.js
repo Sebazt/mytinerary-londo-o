@@ -10,7 +10,7 @@ import NoFound from './cardsCities';
 
 
 function Card(props) {  /* acoje las props del padre citie.pag */
-    const [data, setData] = useState();
+    const [data, setData] = useState(); /* hook define el estado del componente */
     useEffect(() => {
     if (props.search === undefined) {
       axios

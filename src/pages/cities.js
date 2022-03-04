@@ -15,7 +15,7 @@ function PagCities() {
 
     useEffect(() => { /* ínicialización de variables  */
     window.scrollTo(0, 0);
-  }, []);
+  }, []); /* array vacio para evitar que se convierta en un loop y todo arriba atm */
 
   const [input, setInput] = useState();
   const [apidata, setApiData] = useState([]);
@@ -26,13 +26,10 @@ function PagCities() {
       .then((respuesta) => setApiData(respuesta.data.response.ciudades));
 }, []);
 
-      function filterCards(event) {
+      function filterCards(event) { /* filter para busquedad input */
       setInput(
       apidata.filter((city) =>
-        city.name
-          .toLowerCase()
-          .startsWith(event.target.value.toLowerCase().trim())
-      )
+        city.name.toLowerCase().startsWith(event.target.value.toLowerCase().trim()))
     );
   }
 

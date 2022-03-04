@@ -1,7 +1,8 @@
 /* ---------------header details ----------------*/
 .container-fatherdetails{
    display: flex;
-   flex-flow: column wrap;
+   flex-direction: column;
+   flex-wrap: wrap;
    width: 100%;
    min-height: 100vh;
    /* background-color: #e29578; */
@@ -21,7 +22,7 @@
     
 }
 
-.title-details{
+/* .title-details{
     position: absolute;
     margin-left: 25rem;
     margin-top: 8rem;
@@ -33,7 +34,7 @@
     border-radius: 2rem;
     height: 22vh;
     width: auto;
-}
+} */
 
 /* ---------------main imgs ----------------*/
 .maindetails{
@@ -68,14 +69,14 @@
 }
 
 .bike{
-    width: 50%;
-     height: 50%;
+    width: 45%;
+     height: 45%;
      -moz-border-radius: 50%;
      -webkit-border-radius: 50%;
      border-radius: 50%;
 }
 
 .bandera{
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
 }

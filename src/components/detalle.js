@@ -5,12 +5,17 @@ import { useParams } from "react-router-dom";
 import "../css/details.css";
 import axios from 'axios'
 import Bike from '../assets/bike.gif'
+import ItineraryAccordion from "./itineraryCard";
 
 
 
 function CardDetails() {
   const { id } = useParams(); /* metodo de react-router-dom retorna un objeto de forma dinamica */
   const [card, setCard] = useState()
+
+  useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     
   useEffect(()=>{ /* funciona para renderizar por 1ra vez y su actualización */
     axios.get('http://localhost:4000/api/allcities')
@@ -22,7 +27,7 @@ function CardDetails() {
     <div className="container-fatherdetails">
       {card?.map((city) => (
          <div>
-            <h1 className="title-details">{city.name}</h1>
+            {/* <h1 className="title-details">{city.name}</h1> */}
             <div className="card1">
             <img src={city.image} alt="ciudad" className="img-citydetails" />             
                 {/* <h4>{city.country}</h4> */}                
@@ -43,13 +48,12 @@ function CardDetails() {
           <img src={process.env.PUBLIC_URL+ `/imgCountry/${city.culture}`} alt="culture" className="bike" />
           <h2 className="h2-details">{city.countryculture}</h2> 
         </div>
-        
-          {/* <h2 className="h2-details">
-            Come and discover {city.country} from {city.name}
-          </h2> */}
-            
+                 
       </div>
       ))}
+      <div>
+        <ItineraryAccordion/>
+      </div>  
     </div>
   );
 }

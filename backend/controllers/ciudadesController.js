@@ -20,35 +20,53 @@ const ciudadesController = {/* es un objeto, cada propiedad es una función asin
         })
     },
 
-    loadCity: async(req, res) =>{
-        /* los datos que traigo en el input se los paso en el cuerpo del post, de la petición, extrayendolos de ahí y generando una nueva construcción de ciudades.*/
-        /* el req representa required, y esté se envia en un objeto llamado dataInput y va traer cada uno de las propiedades del siguiente objeto */
-        const {ciudad, pais} = req.body.dataInput
-        new Ciudades({
-                      image:image,
-                      ciudad:ciudad,
-                      pais:pais
-        }).save()
-        .then((respuesta) => res.json({respuesta}))
+   obtenerUnaCiudad: async (req, res)=>{
+        const id =req.params.id
+        console.log(req.params)
+        
+        let ciudad
+        let error = null
+
+        try{
+            ciudad = await Ciudades.findOne({_id:id})
+            console.log(ciudad)
+        }catch(err){
+            error = err
+            console.log(error)
+        }
+        res.json({
+            response: error ? 'ERROR' : ciudad, 
+            success: error ? false : true,
+            error: error
+        })
+
+    },
+    cargarCiudad: async(req,res)=>{
+        console.log(req.body)
+        const {ciudad, pais, descripcion} = req.body.dataInput 
+        new Ciudades({nombre:ciudad, 
+                     pais:pais,
+                     descripcion: descripcion}).save()
+            .then((respuesta) => res.json({respuesta}))  
     },
 
-    deleteCity: async (req, res) => {
-    const id = req.params.id;
-        /* ´Params toma el que viene .id y lo guarda en la constante , dps con la fnción de findOne, busca ese id que vino como parametro y lo va eliminar */
-    await Ciudades.findOneAndDelete({ _id: id });
-  },
+    borrarCiudad: async (req,res)=>{ 
+        const id = req.params.id
+        
 
-    modifyCity: async (req, res) => {
-    const id = req.params.id; /* recibe los datos y el parametro guardandolo en el id para poder identifcar la ciudad  */
-    const ciudad = req.body.dataInput;
-    let ciudadb = await Ciudades.findOneAndUpdate({ _id: id }, ciudad);    
-  },
+           await Ciudades.findOneAndDelete({_id:id})
+           .then((respuesta) => res.json({respuesta}))
 
-    getCitieId:  async (req, res) => { /* retorna un país a partir del id */
-    const id = req.params.id;
-    await Ciudades.findOne({ _id: id })
-    .then((respuesta) =>res.json({respuesta}) )
-  },
+    },
+    modificarCiudad: async (req, res)=>{
+        const id = req.params.id
+        const ciudad = req.body.dataInput
+
+        let ciudadb = await Ciudades.findOneAndUpdate({_id:id}, ciudad) 
+        .then((respuesta) => res.json({respuesta}))
+         console.log(ciudadb)
+
+    }
 
 };
 

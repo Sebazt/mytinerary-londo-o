@@ -27,6 +27,7 @@ function App() {
         <Route path='/home' element={<HomePag/>}/>
         <Route path='*' element={<HomePag/>}/>  {/* si hay un error general */}
         <Route path='/cities' element={<PagCities/>}/>
+         {/* error dps de entrar al id,  */}
         <Route path='/cities/details/:id' element={<CardDetails/>}/>
 
 

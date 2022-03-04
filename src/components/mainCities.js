@@ -1,7 +1,6 @@
 
 import React from 'react';
 import "../css/mainCities.css"
-import SearchCities from '../components/searchCities';
 import MapWorld from '../assets/mapworld.png'
 
 

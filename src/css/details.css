@@ -80,3 +80,9 @@
     width: 40%;
     height: 40%;
 }
+
+.butonsToBack{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}

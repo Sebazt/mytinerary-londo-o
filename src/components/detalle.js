@@ -6,6 +6,13 @@ import "../css/details.css";
 import axios from 'axios'
 import Bike from '../assets/bike.gif'
 import ItineraryAccordion from "./itineraryCard";
+import BotontoCalls from "./backhome";
+import Backtocities from "./backcities";
+
+
+
+
+
 
 
 
@@ -24,16 +31,16 @@ function CardDetails() {
 },[])
   
    return (
+
     <div className="container-fatherdetails">
       {card?.map((city) => (
-         <div>
-            {/* <h1 className="title-details">{city.name}</h1> */}
+         <div>            
             <div className="card1">
-            <img src={city.image} alt="ciudad" className="img-citydetails" />             
-                {/* <h4>{city.country}</h4> */}                
+            <img src={city.image} alt="ciudad" className="img-citydetails" />              
             </div>            
         </div>
       ))}
+
       {card?.map((city) => (
       <div className="maindetails">
         <div className="img-detailsmoto">
@@ -51,9 +58,15 @@ function CardDetails() {
                  
       </div>
       ))}
+
       <div>
         <ItineraryAccordion/>
-      </div>  
+      </div>
+
+      <div className="butonsToBack">
+        <BotontoCalls/>
+        <Backtocities/>
+      </div>
     </div>
   );
 }

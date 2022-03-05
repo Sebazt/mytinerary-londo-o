@@ -16,7 +16,6 @@ const ciudadesSchema = new mongoose.Schema({
 
 /*  moongose es un constructor y a través de .model defino un modelo, osea a qué colección me conecto y qué propiedades necesito. cada modelo coneecta con una colección dif.*/
 const Ciudades = mongoose.model('ciudades', ciudadesSchema)
-
 module.exports= Ciudades  /* esta es llamada por el controlador */
 
 

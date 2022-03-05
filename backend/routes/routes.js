@@ -7,7 +7,6 @@ const {obtenerCiudades, obtenerUnaCiudad, cargarCiudad, borrarCiudad, modificarC
 Router.route('/allcities') /* endpoint de la api. */
 .get(obtenerCiudades) /* enviar solicitud para obtener datos. */
 /* a través del metodo .get se obtiene los datos que yo requiera */
-
 .post(cargarCiudad) /* nos trae información desde lo que se ingresa en el frontend hasta nuestra base de datos */
 
 Router.route('/allcities/:id')

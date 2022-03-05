@@ -14,6 +14,24 @@ Router.route('/allcities/:id')
 .put(modificarCiudad) /* put modifica--- */
 .get(obtenerUnaCiudad)
 
+
+
+/* ------------------------------------itinerarie -------------------------------*/
+
+const itinerariesController = require('../controllers/itinerariosController')
+const {obtenerItineraries, obtenerUnItinerario, cargarItinerario, borrarItinerario, modificarItinerario} = itinerariesController
+
+Router.route('/allitineraries')
+.get(obtenerItineraries)
+.post(cargarItinerario)
+
+
+Router.route('/allitineraries/:id')
+.delete(borrarItinerario)
+.put(modificarItinerario)
+.get(obtenerUnItinerario)
+
+
 module.exports = Router
 
 

@@ -22,39 +22,24 @@
     
 }
 
-/* .title-details{
-    position: absolute;
-    margin-left: 25rem;
-    margin-top: 8rem;
-    font-family: 'Tangerine', cursive;
-    color: #fff;
-    text-shadow: 1px 1px 10px #000;
-    font-size: 10em;
-    background: linear-gradient(235deg, #83c5c000, #0f0c217e, #e2947800);
-    border-radius: 2rem;
-    height: 22vh;
-    width: auto;
-} */
+
 
 /* ---------------main imgs ----------------*/
 .maindetails{
     width: 100%;
-    height: 55vh;
+    height: 40vh;
     display: flex;
     flex-wrap: row wrap;
-    /* background-color: yellow; */
     align-items: center;
     justify-content: center;
     justify-content: space-around;
-    margin: 1rem 0;
-    
+    margin: 1rem 0 0 0;
 }
 
-.img-detailsmoto{
+.img-detailsmoto, .img-detailscity, .img-detailsculture{
     width: 30%;
     height: 100%;
-    color: #006d77;
-    text-shadow: 1px 1px 1px rgb(7, 7, 7);
+    color: #006d77;    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,20 +54,94 @@
 }
 
 .bike{
-    width: 45%;
-     height: 45%;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
+    width: 35%;
+    height: 35%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
      border-radius: 50%;
 }
 
 .bandera{
-    width: 40%;
-    height: 40%;
+    width: 35%;
+    height: 35%;
 }
 
 .butonsToBack{
     display: flex;
     justify-content: center;
     padding: 1rem;
+    font-size: .8em;
+}
+
+
+/* -------------------- Breakpoint -480  -------------------- */
+@media (max-width: 480px){
+    .card1{
+    width: 100%;
+    height: 80vh;
+    }
+
+    .maindetails{
+        display: flex;
+        flex-flow: column wrap;
+        width: 100%;
+        margin: 1rem auto;
+        align-items: center;
+    }
+
+    .img-detailsmoto, .img-detailsculture{
+        display: none;
+    }
+
+    .img-detailscity{
+        width: 100%;
+    }
+
+    .bike{
+        width: 45%;
+        height: 45%;
+       margin: auto;
+    }
+}
+
+
+
+
+/* -------------------- Breakpoint -760  -------------------- */
+@media (max-width: 760px){
+   
+    .img-detailsmoto{
+        display: none;
+    }
+
+    .bike{
+        width: 45%;
+        height: 45%;
+    }
+  
+}
+
+
+
+
+/* -------------------- Breakpoint -1000 -------------------- */
+@media (max-width: 1000px){
+    
+    .bandera{
+    width: 45%;
+    height: 45%;
+    }
+
+    .bike{
+        width: 45%;
+        height: 45%;
+    }
+}
+    
+
+
+
+/* -------------------- Breakpoint -1200 -------------------- */
+@media (max-width: 1200px){
+    
 }

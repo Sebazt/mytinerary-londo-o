@@ -1,0 +1,176 @@
+.nofound-Itinerary{
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #006d77;
+}
+
+.title-nofound{
+  background-color: #e29578;
+  align-self: center;
+  margin: 2rem 0 0rem 15rem;
+  width: 30%;
+  height: 20vh;
+  border-radius: 2rem;
+  border: .2rem solid #cfe1b9;
+}
+
+
+.title-nofound>p{
+  font-size: 2.5em;
+  text-align: center;
+  padding: .5rem;
+  font-weight: 500;
+  
+}
+
+
+.img-nofound{
+  width: 60%;
+  align-self: center;
+  margin: 0 0 0 10rem;
+}
+
+
+.img-nofound>img{
+  width: 50%;
+}
+
+
+
+/* -------------------- Breakpoint -480  -------------------- */
+@media (max-width: 480px){
+    .nofound-Itinerary{
+      margin-bottom: 2rem !important;
+      height: 70vh;
+    }
+
+    .title-nofound{
+      margin: auto;
+      width: 70% !important;
+      height: 30vh;
+      border: .1rem solid #cfe1b9;
+      display: flex;
+      align-items: center;
+      
+    }
+
+    .title-nofound>p{
+    font-size: 1.55em;
+    text-align: center;
+    padding: .5rem;
+    font-weight: 200;
+  }
+
+  .img-nofound{
+    margin: 0 auto 1.5rem;
+    height: 30vh;
+  }
+
+  .img-nofound>img{
+    width: 100%;
+  }
+}
+
+
+
+
+/* -------------------- Breakpoint -760  -------------------- */
+@media (max-width: 760px){
+    .nofound-Itinerary{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 5rem;
+      height: 70vh;
+    }
+
+    .title-nofound{
+      margin: 1rem auto;
+      width: 60%;
+      border: .1rem solid #cfe1b9;
+      display: flex;
+      align-items: center;     
+    }
+
+    .title-nofound>p{
+    font-size: 1.55em;
+    text-align: center;
+    padding: .5rem;
+    font-weight: 400;
+  }
+
+  .img-nofound{
+    margin: 0 auto 1.5rem;
+    height: 30vh;
+  }
+
+  .img-nofound>img{
+    width: 100%;
+  }
+    
+}
+
+
+
+
+/* -------------------- Breakpoint -1000 -------------------- */
+@media (max-width: 1000px){
+    .title-nofound{
+      margin: 1rem auto;
+      width: 60%;
+      border: .1rem solid #cfe1b9;
+      display: flex;
+      align-items: center;     
+    }
+
+    .title-nofound>p{
+    font-size: 1.55em;
+    text-align: center;
+    padding: .5rem;
+    margin: auto;
+  }
+
+  
+    
+}
+
+
+/* -------------------- Breakpoint -1200 -------------------- */
+@media (max-width: 1200px){
+    .title-nofound{
+      margin: 1rem auto;
+      width: 60%;
+      border: .1rem solid #cfe1b9;
+      display: flex;
+      align-items: center;     
+    }
+
+    .title-nofound>p{
+    font-size: 1.55em !important;
+    text-align: center;
+    padding: .5rem;
+    margin: auto;
+  }
+}
+
+
+/* -------------------- Breakpoint -1330 -------------------- */
+@media (max-width: 1500px){
+    .title-nofound{
+      margin: 1rem auto;
+      width: 50%;
+      height: 22vh;
+      border: .1rem solid #cfe1b9;
+      display: flex;
+      align-items: center;     
+    }
+
+    .title-nofound>p{
+    font-size: 2.2em;
+    text-align: center;
+    padding: .5rem;
+    margin: auto;
+    font-weight: 500;
+  }
+}

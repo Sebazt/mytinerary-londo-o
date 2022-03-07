@@ -9,12 +9,12 @@
 }
 
 .button-callhome{
-    width: 6.5em;
+    width: 6em;
     height: 2em;
     margin: 0.5em;
     background: #006d77;
     color: white;
-    font-size: 2em !important;
+    font-size: 1.7em !important;
     border: none;
     border-radius: 0.625em;
     font-weight: bold;
@@ -58,7 +58,7 @@
 
     .button-callhome{
         height: 80%;
-        font-size: 1.8em !important;
+        font-size: 1.5em !important;
     }
     
 }

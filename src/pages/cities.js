@@ -1,14 +1,16 @@
-/* import React from 'react'; */
+import React from 'react';
 import CallHome from '../components/callHome';
-
 import HeaderCities from '../components/headerCities';
 import MainCities from '../components/mainCities';
-import React from "react";
 import { useEffect,useState } from "react";
 import axios from "axios"
 import "../css/searchCities.css";
 import SavedSearchIcon from '@mui/icons-material/SavedSearch';
 import Card from '../components/card';
+
+/* import Zeta from "../components/zeta"; */
+/* import React, {Suspense} from "react"; */
+/* const  Card = React.lazy(() => import('../components/card')) */
 
 
 function PagCities() {  
@@ -38,9 +40,9 @@ function PagCities() {
       
           <div>
               <HeaderCities/>
-
+                  
               <MainCities/> 
-
+                  
               <div className='search-city'>
                   <div className='search-wrap'>
                         <div className='search-box'>
@@ -52,9 +54,10 @@ function PagCities() {
                   </div>
               </div>
 
-              {/* defino la propiedad cities para pasarla a los componentes hijos como props, en este caso cardscities */}
               
+              {/* <Suspense fallback={<Zeta/>}> */}
               <Card search={input}/> {/* props */}
+              {/* </Suspense> */}
               <CallHome/>
               
           </div>

@@ -8,10 +8,7 @@ import Bike from '../assets/bike.gif'
 import ItineraryAccordion from "./itineraryCard";
 import BotontoCalls from "./backhome";
 import Backtocities from "./backcities";
-
-
-
-
+import ItinerarieNoFound from "./itineraryNoFound";
 
 
 
@@ -43,7 +40,7 @@ function CardDetails() {
 
       {card?.map((city) => (
       <div className="maindetails">
-        <div className="img-detailsmoto">
+        <div className="img-detailscity">
           <img src={Bike} alt="ciudad" className="bike" />
           <h2 className="h2-details">{city.name}</h2> 
         </div>
@@ -51,7 +48,7 @@ function CardDetails() {
           <img src={process.env.PUBLIC_URL+ `/imgCountry/${city.flag}`} alt="bandera" className="bandera" />
           <h2 className="h2-details">{city.country}</h2> 
         </div>
-        <div className="img-detailsmoto">
+        <div className="img-detailsculture">
           <img src={process.env.PUBLIC_URL+ `/imgCountry/${city.culture}`} alt="culture" className="bike" />
           <h2 className="h2-details">{city.countryculture}</h2> 
         </div>
@@ -62,6 +59,8 @@ function CardDetails() {
       <div>
         <ItineraryAccordion/>
       </div>
+      
+        <ItinerarieNoFound/>
 
       <div className="butonsToBack">
         <BotontoCalls/>

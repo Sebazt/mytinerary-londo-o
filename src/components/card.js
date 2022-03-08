@@ -10,21 +10,12 @@ import NoFound from './cardsCities';
 
 
 function Card(props) {  /* acoje las props del padre citie.pag */
-    const [data, setData] = useState(); /* hook define el estado del componente */
-    useEffect(() => {
-    if (props.search === undefined) {
-      axios
-        .get("http://localhost:4000/api/allcities") /* ´Con .get obtengo el dato de la bd */
-        .then((respuesta) => setData(respuesta.data.response.ciudades));
-    } else {
-      setData(props.search);
-    }
-    }, [props.search]); /* para atualizar el valor de una variable aqui se declara la variable de cambio, esto es para evitar un loop */
     
+
     return (
       <div className='cards-city'>
-      {data?.length !== 0 ? ( /* "?" crea mayor exactitud */
-          data?.map((city) => (
+      {props.cities?.length !== 0 ? ( /* "?" crea mayor exactitud */
+          props.cities?.map((city) => (
           <div className='card'>
               <img src={city.image} alt="ejemplo" className='img-card' /> 
               <div className='description'>

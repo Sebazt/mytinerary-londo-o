@@ -45,10 +45,10 @@ export default function FooterPag() {
             <div className='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 divNum3'>
               <h6 className='text-uppercase fw-bold mb-4'>Menu</h6>
               <div className="menu-footer">
-                <LinkRouter to="home" className="linkFooter">
+                <LinkRouter to={"/home"} className="linkFooter">
                   Home
                 </LinkRouter>
-                <LinkRouter to="cities" className="linkFooter">
+                <LinkRouter to={"/cities"} className="linkFooter">
                   Cities
                 </LinkRouter>
               </div>

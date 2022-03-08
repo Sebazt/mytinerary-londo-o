@@ -90,11 +90,11 @@ const Navbar = () => {
              >
               {/* menu responsivo y funcional */}
               <MenuItem >
-                <LinkRouter className='boton-header' to="home">Home</LinkRouter>
+                <LinkRouter className='boton-header' to={"/home"}>Home</LinkRouter>
               </MenuItem>
 
               <MenuItem >
-                <LinkRouter className='boton-header'to="cities">Cities</LinkRouter>
+                <LinkRouter className='boton-header'to={"/cities"} >Cities</LinkRouter>
               </MenuItem>
 
             </Menu>

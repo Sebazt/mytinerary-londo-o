@@ -7,13 +7,15 @@ import axios from "axios"
 import "../css/searchCities.css";
 import SavedSearchIcon from '@mui/icons-material/SavedSearch';
 import Card from '../components/card';
+import {connect} from "react-redux"
+import citiesActions from "../redux/actions/citiesAction";
 
 /* import Zeta from "../components/zeta"; */
 /* import React, {Suspense} from "react"; */
 /* const  Card = React.lazy(() => import('../components/card')) */
 
 
-function PagCities() {  
+function PagCities(props) {  
 
     useEffect(() => { /* ínicialización de variables  */
     window.scrollTo(0, 0);
@@ -22,17 +24,14 @@ function PagCities() {
   const [input, setInput] = useState();
   const [apidata, setApiData] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:4000/api/allcities")
-      .then((respuesta) => setApiData(respuesta.data.response.ciudades));
-}, []);
+  useEffect(()=>{
+    props.fetchearCities()
+  },[]) 
 
-      function filterCards(event) { /* filter para busquedad input */
-      setInput(
-      apidata.filter((city) =>
-        city.name.toLowerCase().startsWith(event.target.value.toLowerCase().trim()))
-    );
+
+  function filterCards (event) {
+      props.filtrarCities(props.cities, event.target.value)
+
   }
 
 
@@ -56,7 +55,7 @@ function PagCities() {
 
               
               {/* <Suspense fallback={<Zeta/>}> */}
-              <Card search={input}/> {/* props */}
+              <Card cities={props.filterCities}/> {/* props */}
               {/* </Suspense> */}
               <CallHome/>
               
@@ -65,4 +64,19 @@ function PagCities() {
     );
   }
   
-  export default PagCities;
+const mapDispatchToProps  ={
+  fetchearCities:citiesActions.fetchearCities,
+  filtrarCities:citiesActions. filtrarCities,
+
+}
+
+const mapStateToProps = (state) =>{
+  return{
+      cities:state.citiesReducer.cities,
+      auxiliar: state.citiesReducer.auxiliar,
+      filterCities:state.citiesReducer.filterCities
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PagCities);
+ 

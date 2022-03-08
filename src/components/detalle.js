@@ -9,52 +9,63 @@ import ItineraryAccordion from "./itineraryCard";
 import BotontoCalls from "./backhome";
 import Backtocities from "./backcities";
 import ItinerarieNoFound from "./itineraryNoFound";
+import {connect} from "react-redux";
+import citiesActions from "../redux/actions/citiesAction";
+import ZetaRobot from "./zeta";
 
 
 
 
-function CardDetails() {
-  const { id } = useParams(); /* metodo de react-router-dom retorna un objeto de forma dinamica */
-  const [card, setCard] = useState()
-
-  useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [])
-    
-  useEffect(()=>{ /* funciona para renderizar por 1ra vez y su actualización */
-    axios.get('http://localhost:4000/api/allcities')
-    .then(respuesta=>setCard(respuesta.data.response.ciudades.filter(cities => cities._id === id)))
-    /* En la anterior linea filtro los id para pode renderizarlos con el map de la linea 24 */
-},[])
+function CardDetails(props) {
   
+  useEffect(() => {
+      window.scrollTo(0, 0)
+  }, [])
+
+      const { id } = useParams(); /* metodo de react-router-dom retorna un objeto de forma dinamica */
+      const [card, setCard] = useState({element:props.cities.find((i)=>i._id.toString()===id.toString())})
+
+  useEffect(()=>{
+    if (props.cities.lenght<1){
+      props.fetchearUnaCiudad(id)
+      .then ((traerId)=>setCard({element:traerId}))
+    }
+
+},[])
+
+    if (!card.element){
+    return (<ZetaRobot/>)
+}
+
+    
    return (
 
     <div className="container-fatherdetails">
-      {card?.map((city) => (
+      
          <div>            
             <div className="card1">
-            <img src={city.image} alt="ciudad" className="img-citydetails" />              
+            <img src={card.element.image} alt="ciudad" className="img-citydetails" />              
             </div>            
         </div>
-      ))}
+     
 
-      {card?.map((city) => (
+      
       <div className="maindetails">
         <div className="img-detailscity">
           <img src={Bike} alt="ciudad" className="bike" />
-          <h2 className="h2-details">{city.name}</h2> 
+          <h2 className="h2-details">{card.element.name}</h2> 
         </div>
         <div className="img-detailsmoto">
-          <img src={process.env.PUBLIC_URL+ `/imgCountry/${city.flag}`} alt="bandera" className="bandera" />
-          <h2 className="h2-details">{city.country}</h2> 
+          <img src={process.env.PUBLIC_URL+ `/imgCountry/${card.element.flag}`} alt="bandera" className="bandera" />
+          <h2 className="h2-details">{card.element.country}</h2> 
         </div>
         <div className="img-detailsculture">
-          <img src={process.env.PUBLIC_URL+ `/imgCountry/${city.culture}`} alt="culture" className="bike" />
-          <h2 className="h2-details">{city.countryculture}</h2> 
+          <img src={process.env.PUBLIC_URL+ `/imgCountry/${card.element.culture}`} alt="culture" className="bike" />
+          <h2 className="h2-details">{card.element.countryculture}</h2> 
         </div>
                  
       </div>
-      ))}
+      
 
       <div>
         <ItineraryAccordion/>
@@ -70,4 +81,19 @@ function CardDetails() {
   );
 }
 
-export default CardDetails;
+const mapDispatchToProps  ={
+  fetchearCities:citiesActions.fetchearCities,
+  filtrarCities:citiesActions. filtrarCities,
+
+}
+
+const mapStateToProps = (state) =>{
+  return{
+      cities:state.citiesReducer.cities,
+      auxiliar: state.citiesReducer.auxiliar,
+      filterCities:state.citiesReducer.filterCities
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardDetails)
+

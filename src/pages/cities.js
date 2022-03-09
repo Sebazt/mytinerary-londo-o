@@ -64,13 +64,13 @@ function PagCities(props) {
     );
   }
   
-const mapDispatchToProps  ={
+const mapDispatchToProps  ={  /* aqui modifico los estados mapStateToProps */
   fetchearCities:citiesActions.fetchearCities,
   filtrarCities:citiesActions. filtrarCities,
 
 }
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = (state) =>{ /* aqui tomo los estados mapStateToProps */
   return{
       cities:state.citiesReducer.cities,
       auxiliar: state.citiesReducer.auxiliar,
@@ -79,4 +79,4 @@ const mapStateToProps = (state) =>{
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PagCities);
- 
+ /* a través del metodo connect vinculo los componentes de react al redux */

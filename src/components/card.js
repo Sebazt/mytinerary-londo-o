@@ -16,7 +16,7 @@ function Card(props) {  /* acoje las props del padre citie.pag */
       <div className='cards-city'>
       {props.cities?.length !== 0 ? ( /* "?" crea mayor exactitud */
           props.cities?.map((city) => (
-          <div className='card'>
+          <div className='card' key={city._id}>
               <img src={city.image} alt="ejemplo" className='img-card' /> 
               <div className='description'>
                     <h3>{city.name}</h3>

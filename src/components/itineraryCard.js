@@ -11,9 +11,7 @@ import IconButton from "@mui/material/IconButton";
 import WebConstructor from '../assets/webConstruction.png'
 import SportsMotorsportsIcon from '@mui/icons-material/SportsMotorsports';
 
-import {connect} from "react-redux";
-import  itinerariesActions from "../redux/actions/itinerariesAction"
-import citiesActions from "../redux/actions/citiesAction";
+
 
 
 
@@ -33,7 +31,7 @@ const ExpandMore = styled((props) => {
 function ItineraryAccordion(props) {
   
   /* const { id } = useParams();
-  const [card, setCard] = React.useState((props.cities.filter(CityById => CityById._id === id))[0])
+  const [card, setCard] = React.useState((props.cities.filter(filterItinerarieForCity => filterItinerarieForCity._id === id))[0])
  */
   /* React.useEffect(() =>{
     if(props.cities.length < 1){
@@ -53,13 +51,13 @@ function ItineraryAccordion(props) {
   
 
   /* console.log(props.itineraries) */
-if (!props.itinerarie){
+if (!props.itinerary){
   return(<h1>esta cargando</h1>)
 }
   return (
     <div >
-      {props.itinerarie?.map((itinerarie) => (
-        <div className="accordion-container">
+      {props.itinerary?.map((itinerarie) => (
+        <div className="accordion-container" key={itinerarie._id}>
           <div className="accordio-sub">
             <h2 className="subtitulo-accordion">{itinerarie.event}</h2>
           </div>
@@ -73,10 +71,7 @@ if (!props.itinerarie){
 
 
           <div className="accordion-items">
-            <img src={process.env.PUBLIC_URL+ `/imgCountry/${itinerarie.price}`}className="item1"/>
-            <img src={process.env.PUBLIC_URL+ `/imgCountry/${itinerarie.price}`}className="item1"/>
-            <img src={process.env.PUBLIC_URL+ `/imgCountry/${itinerarie.price}`}className="item1"/>
-            <img src={process.env.PUBLIC_URL+ `/imgCountry/${itinerarie.price}`}className="item1"/>
+            <h2 className="duration">Price: {"💵".repeat(parseInt(itinerarie.price))}</h2>
           </div>
 
           <div className="accordion-items">

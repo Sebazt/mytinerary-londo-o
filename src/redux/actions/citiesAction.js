@@ -17,7 +17,7 @@ const citiesActions = {
                 const respuesta = await axios.delete('http://localhost:4000/api/allcities/'+id)
 
                 dispatch({type:'delete', payload:respuesta.data.respuesta})
-
+                /* dispatch nos permite la async. a través de trunk */
             }catch(err){
                 console.log(err)
             }
@@ -38,9 +38,21 @@ const citiesActions = {
     },
     
     fetchearUnaCiudad: (id) =>{
-        return async (dispatch, getState) => {
+        /* return async (dispatch, getState) => {
             const res = await axios.get("http://localhost:4000/api/allcities"+id)
             return (res.data.response)
+        } */
+        return async (dispatch, getState) => {
+
+            try {
+
+                const respuesta = await axios.get("http://localhost:4000/api/allcities/"+id)
+                console.log(respuesta)
+                return (respuesta.data.response)
+
+            } catch (err) {
+                console.log(err)
+            }
         }
     }
 

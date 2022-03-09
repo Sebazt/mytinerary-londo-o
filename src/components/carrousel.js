@@ -66,7 +66,7 @@ breakpoints={{
         
 
         {Cities.map(city =>
-        <SwiperSlide className="swiper-slide">
+        <SwiperSlide className="swiper-slide" key={city._id}>
           <img className="imagenes" src={city.image}  alt="Ciudad"/>
           
           <h3 className="subtitulo-cartas">{city.name}</h3>

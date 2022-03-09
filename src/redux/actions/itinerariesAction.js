@@ -23,12 +23,14 @@ const itinerariesActions = {
             }
         }
     },
+    
     filtrarItineraries: (itineraries, value)=>{
 
         return (dispatch,getState)=>{
             dispatch({type:'filtroItinerary', payload:{itineraries, value}})
         }
     },
+
     cargarItineraries: (name,itineraries)=>{
         return async(dispatch,getState)=>{
             const respuesta = await axios.post('http://localhost:4000/api/allitineraries',{name,itineraries})

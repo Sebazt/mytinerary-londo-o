@@ -10,6 +10,7 @@ const ciudadesSchema = new mongoose.Schema({
     flag:{type:String,required:true},
     culture:{type:String,required:true},
     countryculture:{type:String,required:true}
+    
 })
 
 const Ciudades = mongoose.model('ciudades', ciudadesSchema)

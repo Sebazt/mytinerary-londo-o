@@ -37,6 +37,9 @@
   width: 50%;
 }
 
+.novisible{
+  display: none;
+}
 
 
 /* -------------------- Breakpoint -480  -------------------- */

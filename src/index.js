@@ -3,21 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+/* desde aqui se añade lo de redux, estas lineas no cambian. */
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import mainReducer from './redux/reducers/mainReducer';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux'; /* creo la tienda y el middleware para darle sincronizada a redux y hacer llamadas ajax. */
 
 const reduxStore = createStore(mainReducer,applyMiddleware(thunk))
 
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  
     <Provider store={reduxStore}> {/* se engloba la app */}
         <App /> 
-    </Provider>
-  </React.StrictMode>,
+    </Provider>,
+  
   document.getElementById('root')
 );
 

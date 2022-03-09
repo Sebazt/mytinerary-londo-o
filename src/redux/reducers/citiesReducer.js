@@ -1,19 +1,20 @@
+/* especifican de que forma cambia el estado de la app */
 const initialState = {
-    cities:[],
-    auxiliar:[],
+    cities:[],  /* estado inicial  */
+    auxiliar:[],  /* este se crea con el fin de tener el dato puro de la api.  */
    filterCities: [], 
 }
 
 const citiesReducer = (state = initialState, action)=>{
 
     switch(action.type){
-        case 'fetch':
+        case 'fetch': /* este caso se solicita en en actions, a través del dispatch */
 
             return {
-                ...state,
+                ...state,  /*toma el estado, y dependiendo de la fun. genera un cambio de valor*/
                 cities: action.payload,
                 auxiliar: action.payload,
-                filterCities: action.payload
+                filterCities: action.payload  /* payload representa el nombre del envio */
             }
 
         case 'delete':
@@ -22,7 +23,7 @@ const citiesReducer = (state = initialState, action)=>{
                 cities: action.payload
             }
 
-        case 'cargarProducto':
+        case 'cargarCity':
             let cities = [...state.cities]
             cities.push(action.payload)
             return{
@@ -41,7 +42,7 @@ const citiesReducer = (state = initialState, action)=>{
             }
         default:
             return state
-    }
+    }      
 
 
 }

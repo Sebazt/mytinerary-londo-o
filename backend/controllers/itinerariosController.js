@@ -1,5 +1,7 @@
 const Itineraries  = require('../models/itineraries') 
 
+
+
 const itinerariesController = {
 
     obtenerItineraries:  async (req,res)=>{ 
@@ -41,7 +43,7 @@ const itinerariesController = {
 
 
     cargarItinerario: async(req,res)=>{
-        const {city, event, imgItinerarie, imageUser, nameUser, price, duration, likes, hashtag,  comments} = req.body.dataInput
+        const {city, event, imgItinerarie, imageUser, nameUser, price, duration, likes, hashtag,  comments, ciudad} = req.body.dataInput
         new Itineraries({city:city,  
                      event:event,
                      imgItinerarie:imgItinerarie,
@@ -51,7 +53,8 @@ const itinerariesController = {
                      duration:duration,
                      likes:likes,
                      hashtag:hashtag,
-                     comments:comments}).save()
+                     comments:comments,
+                     ciudad:ciudad}).save()
             .then((respuesta) => res.json({respuesta}))  
     },
  
@@ -73,7 +76,24 @@ const itinerariesController = {
 
         let itinerariedb = await Itineraries.findOneAndUpdate({_id:id}, itinerarie) 
         .then((respuesta) => res.json({respuesta}))
+    },
+
+    obtenerItinerarioPorIdCiudad: async (req, res) =>{
+        try {
+            let itinerarie
+            const id = req.params.id
+            try{
+                itinerarie = await Itineraries.find({ciudad:id})
+            }catch(error){
+                console.log(error)
+            }
+            res.json({respuesta:itinerarie,success:true})
+
+        } catch (error) {
+            console.log(error);
+        }
     }
+    
 
 };
 

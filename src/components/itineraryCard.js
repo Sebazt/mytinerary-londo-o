@@ -11,6 +11,9 @@ import IconButton from "@mui/material/IconButton";
 import WebConstructor from '../assets/webConstruction.png'
 import SportsMotorsportsIcon from '@mui/icons-material/SportsMotorsports';
 
+import {connect} from "react-redux";
+import  itinerariesActions from "../redux/actions/itinerariesAction"
+import citiesActions from "../redux/actions/citiesAction";
 
 
 
@@ -27,9 +30,18 @@ const ExpandMore = styled((props) => {
 
 
 
-function ItineraryAccordion() {
-  const { id } = useParams();
-  const [card, setCard] = useState();
+function ItineraryAccordion(props) {
+  
+  /* const { id } = useParams();
+  const [card, setCard] = React.useState((props.cities.filter(CityById => CityById._id === id))[0])
+ */
+  /* React.useEffect(() =>{
+    if(props.cities.length < 1){
+      props.fetchearUnaCiudad(id)
+        .then(response => setCard(response))
+    }
+    props.filterItinerarieForCity(id)
+  }, []) */
 
   const [expanded, setExpanded] = React.useState(false);
 
@@ -38,15 +50,15 @@ function ItineraryAccordion() {
   };
 
 
-  useEffect(() => {
-    axios.get('http://localhost:4000/api/allitineraries')
-      .then(respuesta => setCard(respuesta.data.response.itineraries))
-  }, [])
+  
 
-
+  /* console.log(props.itineraries) */
+if (!props.itinerarie){
+  return(<h1>esta cargando</h1>)
+}
   return (
     <div >
-      {card?.map((itinerarie) => (
+      {props.itinerarie?.map((itinerarie) => (
         <div className="accordion-container">
           <div className="accordio-sub">
             <h2 className="subtitulo-accordion">{itinerarie.event}</h2>
@@ -121,4 +133,25 @@ function ItineraryAccordion() {
 
 
 }
-export default ItineraryAccordion;
+
+/* const mapDispatchToProps  ={
+  fetchearCities: citiesActions.fetchearCities,
+  filterItinerarieForCity: itinerariesActions.filterItinerarieForCity,
+  fetchearUnaCiudad: citiesActions.fetchearUnaCiudad
+  fetchearItineraries:itinerariesActions.fetchearItineraries,
+  
+
+} */
+
+/* const mapStateToProps = (state) =>{
+  return{
+      cities: state.citiesReducer.cities,
+      auxiliar: state.citiesReducer.auxiliar,
+      itineraries: state.itinerariesReducer.itineraries
+      itineraries:state.itinerariesReducer.itineraries
+  }
+}
+ */
+
+
+export default ItineraryAccordion

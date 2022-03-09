@@ -1,13 +1,15 @@
 import axios from 'axios';
 
 const citiesActions = {
-
+    /* redux no permite que las acciones sean asyncronas, por el el async esta junto al return*/
     fetchearCities: () =>{
        return async(dispatch, getState) => {
             const res = await axios.get('http://localhost:4000/api/allcities')
-            dispatch({type:'fetch', payload:res.data.response.ciudades})
+            dispatch({type:'fetch', payload:res.data.response.ciudades})/* despacho pedido */
+            /* payload se utiliza para utilizar el state, es una carga */
        }
     },
+
     borrarCities: (id)=>{
         return async(dispatch, getState) => {
             try {

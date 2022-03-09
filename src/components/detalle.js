@@ -13,35 +13,39 @@ import {connect} from "react-redux";
 import citiesActions from "../redux/actions/citiesAction";
 import ZetaRobot from "./zeta";
 
+import  itinerariesActions from "../redux/actions/itinerariesAction"
 
 
 
 function CardDetails(props) {
   
-  useEffect(() => {
-      window.scrollTo(0, 0)
-  }, [])
+ 
 
       const { id } = useParams(); /* metodo de react-router-dom retorna un objeto de forma dinamica */
       const [card, setCard] = useState({element:props.cities.find((i)=>i._id.toString()===id.toString())})
+
+  const [mensaje, setMensaje] = useState(false);
+
 
   useEffect(()=>{
     if (props.cities.lenght<1){
       props.fetchearUnaCiudad(id)
       .then ((traerId)=>setCard({element:traerId}))
     }
-
+    window.scrollTo(0, 0)
+    props.filterItinerarieForCity(id)
 },[])
 
-    if (!card.element){
+    if (!card.element && !props.itineraries){
     return (<ZetaRobot/>)
 }
+    
 
     
    return (
 
     <div className="container-fatherdetails">
-      
+      {console.log(props.itineraries)}
          <div>            
             <div className="card1">
             <img src={card.element.image} alt="ciudad" className="img-citydetails" />              
@@ -68,11 +72,11 @@ function CardDetails(props) {
       
 
       <div>
-        <ItineraryAccordion/>
+        <ItineraryAccordion itinerarie={props.itineraries}/>
       </div>
       
-        <ItinerarieNoFound/>
-
+        <ItinerarieNoFound estado={props.itineraries.lenght ?false:true}/>
+          {console.log(props.itineraries.lenght)}
       <div className="butonsToBack">
         <BotontoCalls/>
         <Backtocities/>
@@ -84,6 +88,7 @@ function CardDetails(props) {
 const mapDispatchToProps  ={
   fetchearCities:citiesActions.fetchearCities,
   filtrarCities:citiesActions. filtrarCities,
+  filterItinerarieForCity: itinerariesActions.filterItinerarieForCity
 
 }
 
@@ -91,7 +96,8 @@ const mapStateToProps = (state) =>{
   return{
       cities:state.citiesReducer.cities,
       auxiliar: state.citiesReducer.auxiliar,
-      filterCities:state.citiesReducer.filterCities
+      filterCities:state.citiesReducer.filterCities,
+      itineraries: state.itinerariesReducer.itineraries
   }
 }
 

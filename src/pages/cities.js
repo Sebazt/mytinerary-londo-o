@@ -2,38 +2,26 @@ import React from 'react';
 import CallHome from '../components/callHome';
 import HeaderCities from '../components/headerCities';
 import MainCities from '../components/mainCities';
-import { useEffect,useState } from "react";
-import axios from "axios"
+import { useEffect } from "react";
 import "../css/searchCities.css";
 import SavedSearchIcon from '@mui/icons-material/SavedSearch';
 import Card from '../components/card';
 import {connect} from "react-redux"
 import citiesActions from "../redux/actions/citiesAction";
 
-/* import Zeta from "../components/zeta"; */
-/* import React, {Suspense} from "react"; */
-/* const  Card = React.lazy(() => import('../components/card')) */
 
 
-function PagCities(props) {  
-
-    useEffect(() => { /* ínicialización de variables  */
-    window.scrollTo(0, 0);
-  }, []); /* array vacio para evitar que se convierta en un loop y todo arriba atm */
-
-  const [input, setInput] = useState();
-  const [apidata, setApiData] = useState([]);
+function PagCities(props) {      
 
   useEffect(()=>{
     props.fetchearCities()
+    window.scrollTo(0, 0)
   },[]) 
 
 
   function filterCards (event) {
       props.filtrarCities(props.cities, event.target.value)
-
   }
-
 
     return (
       
@@ -79,4 +67,4 @@ const mapStateToProps = (state) =>{ /* aqui tomo los estados mapStateToProps */
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PagCities);
- /* a través del metodo connect vinculo los componentes de react al redux */
+ /* a través del metodo connect vinculo los componentes de react al redux  y hacer uso del store*/

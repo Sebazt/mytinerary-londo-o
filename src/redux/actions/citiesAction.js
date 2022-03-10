@@ -38,10 +38,6 @@ const citiesActions = {
     },
     
     fetchearUnaCiudad: (id) =>{
-        /* return async (dispatch, getState) => {
-            const res = await axios.get("http://localhost:4000/api/allcities"+id)
-            return (res.data.response)
-        } */
         return async (dispatch, getState) => {
 
             try {

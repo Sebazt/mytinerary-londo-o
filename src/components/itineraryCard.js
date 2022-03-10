@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import axios from 'axios';
 import "../css/itineraryCard.css";
 import { styled } from "@mui/material/styles";
-
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
@@ -29,17 +28,6 @@ const ExpandMore = styled((props) => {
 
 
 function ItineraryAccordion(props) {
-  
-  /* const { id } = useParams();
-  const [card, setCard] = React.useState((props.cities.filter(filterItinerarieForCity => filterItinerarieForCity._id === id))[0])
- */
-  /* React.useEffect(() =>{
-    if(props.cities.length < 1){
-      props.fetchearUnaCiudad(id)
-        .then(response => setCard(response))
-    }
-    props.filterItinerarieForCity(id)
-  }, []) */
 
   const [expanded, setExpanded] = React.useState(false);
 
@@ -128,25 +116,6 @@ if (!props.itinerary){
 
 
 }
-
-/* const mapDispatchToProps  ={
-  fetchearCities: citiesActions.fetchearCities,
-  filterItinerarieForCity: itinerariesActions.filterItinerarieForCity,
-  fetchearUnaCiudad: citiesActions.fetchearUnaCiudad
-  fetchearItineraries:itinerariesActions.fetchearItineraries,
-  
-
-} */
-
-/* const mapStateToProps = (state) =>{
-  return{
-      cities: state.citiesReducer.cities,
-      auxiliar: state.citiesReducer.auxiliar,
-      itineraries: state.itinerariesReducer.itineraries
-      itineraries:state.itinerariesReducer.itineraries
-  }
-}
- */
 
 
 export default ItineraryAccordion

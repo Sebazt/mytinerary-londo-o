@@ -8,14 +8,14 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import mainReducer from './redux/reducers/mainReducer';
-import { createStore, applyMiddleware } from 'redux'; /* creo la tienda y el middleware para darle sincronizada a redux y hacer llamadas ajax. */
+import { createStore, applyMiddleware } from 'redux'; /* creo la tienda y el middleware para darle sincronizada a redux y hacer llamadas . */
 
 const reduxStore = createStore(mainReducer,applyMiddleware(thunk))
 
 
 
 ReactDOM.render(
-  
+   
     <Provider store={reduxStore}> {/* se engloba la app */}
         <App /> 
     </Provider>,

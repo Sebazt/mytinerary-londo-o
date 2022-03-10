@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/card.css";
 import { useParams } from "react-router-dom";
-/* import WebConstruction from '../assets/webConstruction.png' */
 import "../css/details.css";
 import axios from 'axios'
 import Bike from '../assets/bike.gif'
@@ -77,7 +76,7 @@ function CardDetails(props) {
   
       <ItinerarieNoFound estado={props.itineraries.length ? false : true} />
       
-      {/* {props.itineraries.length } */}
+    
       <div className="butonsToBack">
         <BotontoCalls />
         <Backtocities />

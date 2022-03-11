@@ -26,7 +26,7 @@ function CardDetails(props) {
   /*  const [mensaje, setMensaje] = useState(false); */
 
 
-  useEffect(() => {
+  useEffect(() => {  /* error al recarga la pag, solución */
     if (props.cities.length < 1) {
       props.fetchearUnaCiudad(id)
         .then((traerId) => setCard({ element: traerId }))

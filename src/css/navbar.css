@@ -33,7 +33,8 @@
 .boton-header{  
   text-decoration: none;
   margin: 0 .5rem;
-  border-radius: 1rem;  
+  border-radius: 1rem;
+  color: #000;
 }
 
 .boton-header:hover{

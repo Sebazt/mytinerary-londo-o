@@ -23,12 +23,14 @@ const citiesActions = {
             }
         }
     },
+    
     filtrarCities: (cities, value)=>{
 
         return (dispatch,getState)=>{
             dispatch({type:'filtro', payload:{cities, value}})
         }
     },
+
     cargarCities: (name,cities)=>{
         return async(dispatch,getState)=>{
             const respuesta = await axios.post('http://localhost:4000/api/allcities',{name,cities})

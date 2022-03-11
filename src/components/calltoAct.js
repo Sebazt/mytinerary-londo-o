@@ -9,6 +9,6 @@ export default function ButonCall() {
         <LinkRouter to={"/cities"}>
         <button className="botonaction">Go cities</button>
         </LinkRouter>
-        </div>  
+      </div>  
   );
 }

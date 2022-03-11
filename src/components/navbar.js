@@ -18,7 +18,9 @@ import { Link as LinkRouter } from 'react-router-dom'
 
 
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = [
+<LinkRouter className='boton-header' to={"/signup"}>Sign Up</LinkRouter>,
+<LinkRouter className='boton-header' to={"/signin"}>Sign In</LinkRouter>];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

@@ -12,11 +12,31 @@ import { FcInvite } from "react-icons/fc"
 import { FcCheckmark } from "react-icons/fc"
 
 
-function SingUp(props) {
+function SignUp(props) {
+  console.log(props)
 
+  const handleSubmit = (event) => {
+    event.preventDefault()  /* evita que la pag se refresque */
+    const userData = {
+      firstName: event.target[0].value,
+      lastName: event.target[1].value,
+      email: event.target[2].value,
+      password: event.target[3].value,
+      photoURL: event.target[4].value,
+      chooseCountry: event.target[5].value,
+      from: "form-Signup"  /* desde aquí se cargaron los datos */
+    }
+    props.signUpUser(userData) /* guardo toda la inf. recolectada en esta variable */
+
+  }
+  console.log(props.message)
+  /* alert(props.message.message) */
+  
+  
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+  
 
   
   return (
@@ -24,7 +44,7 @@ function SingUp(props) {
       <div className="container-form">
         <h1 className="titulo-form">Sign Up</h1>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="inputbox">
             <input type="text" required="required" />
             <span><FcVoicePresentation/> First Name</span>
@@ -77,4 +97,17 @@ function SingUp(props) {
   );
 }
 
-export default SingUp;
+const mapDispatchToProps = {
+  signUpUser:UserActions.signUpUser,
+
+}
+const mapStateToProps = (state) => {
+  return {
+    message: state.userReducer.message,
+  }
+}
+
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

@@ -6,22 +6,34 @@ import { connect } from 'react-redux';
 import UserActions from '../../redux/actions/usersActions';
 import { FcGoogle } from "react-icons/fc"
 import { FcUnlock } from "react-icons/fc"
-import { FcInvite } from "react-icons/fc"
 import { FcCheckmark } from "react-icons/fc"
 import { FcApprove } from "react-icons/fc"
 
-function SingUp(props) {
 
+
+function SignIn(props) {
+    console.log(props)
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const logedUser = {
+      email: event.target[0].value,
+      password: event.target[1].value,
+      from: "form-Signin"
+    }
+    props.signInUser(logedUser)
+  }
+
   
   return (
     <div className="container-signup">
       <div className="container-form">
         <h1 className="titulo-form">Sign In</h1>
 
-        <form>
+        <form onSubmit={handleSubmit}>
 
           <div className="inputbox">
             <input type="text" required="required" />
@@ -56,4 +68,11 @@ function SingUp(props) {
   );
 }
 
-export default SingUp;
+const mapDispatchToProps = {
+  signInUser:UserActions.signInUser,
+
+}
+
+
+
+export default connect(null, mapDispatchToProps)(SignIn);

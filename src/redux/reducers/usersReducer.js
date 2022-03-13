@@ -1,16 +1,26 @@
 const initialState = {
-    usuario:{},
+    user: null, /* para poder establecer un valor de renderizado */
+    message: null,
+
 }
 
-const authReducer = (state = initialState, action)=>{
+const userReducer = (state = initialState, action) => {
 
-    switch(action.type){
+
+    switch (action.type) {
+        case 'user':
+            return {
+                ...state,
+                user: action.payload,
+            }
+        case 'message':
+            return {
+                ...state,
+                message: action.payload.message
+            }
 
         default:
             return state
     }
-
-
 }
-
-export default authReducer
+export default userReducer

@@ -7,8 +7,8 @@ import FooterPag from './components/footer';
 import HomePag from './pages/home';
 import PagCities from './pages/cities';
 import CardDetails from './components/detalle';
-import SingUp from './components/singUp/signup'
-import SingIn from './components/SignIn/signin'
+import SignUp from './components/singUp/signup'
+import SignIn from './components/SignIn/signin'
 
 
 
@@ -29,8 +29,8 @@ function App() {
         <Route path='/home' element={<HomePag/>}/>
         <Route path='*' element={<HomePag/>}/>  {/* si hay un error general */}
         <Route path='/cities' element={<PagCities/>}/>
-        <Route path='/signup' element={<SingUp/>}/>
-        <Route path='/signin' element={<SingIn/>}/>
+        <Route path='/signup' element={<SignUp/>}/>
+        <Route path='/signin' element={<SignIn/>}/>
         <Route path='/cities/details/:id' element={<CardDetails/>}/>
 
 

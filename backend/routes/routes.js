@@ -38,3 +38,19 @@ Router.route('/allitineraries/ciudad/:id')
 module.exports = Router
 
 
+
+/* ------------------------------------usuarios -------------------------------*/
+
+const usersControllers = require('../controllers/usersControllers');
+const { signUpUsers, signInUser, signOutUser } = usersControllers
+
+Router.route('/auth/signup')
+  .post(signUpUsers)
+
+Router.route('/auth/signin')
+  .post(signInUser)
+
+Router.route('/auth/signout')
+  .post(signOutUser)
+
+module.exports = Router

@@ -3,7 +3,7 @@
 import { combineReducers } from 'redux'
 /* permite alojar todos los reducers en uno solo */
 import citiesReducer from './citiesReducer'
-
+import userReducer from './usersReducer'
 import itinerariesReducer from './itinerariesReducer'
 
 
@@ -11,9 +11,9 @@ import itinerariesReducer from './itinerariesReducer'
 const mainReducer = combineReducers({
  
     citiesReducer,
-    itinerariesReducer
+    itinerariesReducer,
+    userReducer
     
-
 })
 
 export default mainReducer

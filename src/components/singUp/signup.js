@@ -14,9 +14,11 @@ import { FcCheckmark } from "react-icons/fc"
 
 function SignUp(props) {
   console.log(props)
+  
 
   const handleSubmit = (event) => {
     event.preventDefault()  /* evita que la pag se refresque */
+    let formReset = document.querySelector('#formRese')
     const userData = {
       firstName: event.target[0].value,
       lastName: event.target[1].value,
@@ -26,6 +28,7 @@ function SignUp(props) {
       chooseCountry: event.target[5].value,
       from: "form-Signup"  /* desde aquí se cargaron los datos */
     }
+    formReset.reset()
     props.signUpUser(userData) /* guardo toda la inf. recolectada en esta variable */
 
   }
@@ -44,7 +47,7 @@ function SignUp(props) {
       <div className="container-form">
         <h1 className="titulo-form">Sign Up</h1>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} id="formRese">
           <div className="inputbox">
             <input type="text" required="required" />
             <span><FcVoicePresentation/> First Name</span>

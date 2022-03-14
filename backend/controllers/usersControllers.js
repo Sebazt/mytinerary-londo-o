@@ -92,8 +92,8 @@ const usersControllers = {
       if (!usuarioExiste) {// PRIMERO VERIFICA QUE EL USUARIO EXISTA
         res.json({ success: false, message: "You haven't registered yet, do the signUp" })
 
-      } else {
-        if (from !== "form-Signin") {
+      } else {    /* el usuario existe */
+        if (from !== "form-Signin") { 
 
           let contraseñaCoincide = usuarioExiste.password.filter(pass => bcryptjs.compareSync(password, pass))/* se compara la contraseña con la que se guarda en la base de daos a través de esté filtro */
 
@@ -134,7 +134,7 @@ const usersControllers = {
                 success: true,
                 from: from,
                 response: { userData },
-                message: "Welcome Again" + userData.firstName,
+                message: "Welcome Again " + userData.firstName,
               })
             } else {
               res.json({

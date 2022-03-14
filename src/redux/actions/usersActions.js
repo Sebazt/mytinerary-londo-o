@@ -23,9 +23,10 @@ const userActions = {
 
     }
   },
-  SignOutUser: (closeuser) => {
+  signOutUser: (closeuser) => {
     return async (dispatch, getState) => {
-      const user = axios.post('http://localhost:4000/api/auth/signout', { closeuser })
+      console.log("ingrese a la función")
+      const user = await axios.post('http://localhost:4000/api/auth/signout', { closeuser })
       dispatch({ type: 'user', payload: null });
     }
   }

@@ -61,3 +61,57 @@
 .boton-a:hover{
   text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.521);
 }
+
+.firtsName{
+  
+  font-size: 2em;
+  margin: 0.5rem 1rem 0 0;
+  font-family: 'Tangerine', cursive;
+  color: #fff;
+  text-shadow: 1px 1px 10px #000;
+}
+
+
+
+
+/* -------------------- Breakpoint -480  -------------------- */
+@media (max-width: 480px){
+  .firtsName{
+    display: none;
+  }
+     
+   
+}
+
+
+
+
+
+/* -------------------- Breakpoint -760  -------------------- */
+@media (max-width: 760px){
+
+    .firtsName{
+    display: none;
+  }
+    
+}
+
+
+
+
+/* -------------------- Breakpoint -1000 -------------------- */
+@media (max-width: 1000px){
+    
+}
+
+
+/* -------------------- Breakpoint -1200 -------------------- */
+@media (max-width: 1200px){
+    
+}
+
+
+/* -------------------- Breakpoint -1330 -------------------- */
+@media (max-width: 1500px){
+    
+}

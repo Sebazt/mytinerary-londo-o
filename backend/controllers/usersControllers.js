@@ -127,6 +127,7 @@ const usersControllers = {
               const userData = {
                 firstName: usuarioExiste.firstName,
                 email: usuarioExiste.email,
+                photoURL: usuarioExiste.photoURL, 
                 from: usuarioExiste.from
               }
 
@@ -160,8 +161,9 @@ const usersControllers = {
         success: false, message: "Something went wrong try again in a few minutes" })
     }
   },
+  
   signOutUser: async (req, res) => {
-
+    console.log("ingrese a la función")
     const email = req.body.closeuser
     const user = await User.findOne({ email })
     await user.save()

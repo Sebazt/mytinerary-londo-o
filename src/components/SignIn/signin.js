@@ -19,11 +19,13 @@ function SignIn(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    let formReset = document.querySelector('#formResete')
     const logedUser = {
       email: event.target[0].value,
       password: event.target[1].value,
       from: "form-Signin"
     }
+    formReset.reset()
     props.signInUser(logedUser)
   }
 
@@ -33,10 +35,10 @@ function SignIn(props) {
       <div className="container-form">
         <h1 className="titulo-form">Sign In</h1>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} id="formResete">
 
           <div className="inputbox">
-            <input type="text" required="required" />
+            <input type="email" required="required" />
             <span><FcApprove /> E-mail</span>
           </div>
 

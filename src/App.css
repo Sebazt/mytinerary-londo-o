@@ -5,11 +5,14 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'EB Garamond', serif;
+  
 }
 
 /* font-family: 'Tangerine', cursive; */
 
 body{
+  padding: 0 !important;
+  overflow: visible !important; /* 14 y 15 linea es con el fin de evitar el navbar se sobresalga del contenedor */
   display: flex;
   flex-direction: column;
   width: 100%;

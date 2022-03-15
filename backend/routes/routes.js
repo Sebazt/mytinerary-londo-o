@@ -1,5 +1,6 @@
 /* se establecen nuestros endoinds y aqui se conecta con la base de datos para extraer el contenido ella, y se utiliza "express" --ruta num 3*/
 const Router = require('express').Router() /* .router par establecer dif. rutas  */
+const validator = require('../config/validator')
 
 const ciudadesController = require('../controllers/ciudadesController')
 const {obtenerCiudades, obtenerUnaCiudad, cargarCiudad, borrarCiudad, modificarCiudad} = ciudadesController
@@ -45,7 +46,7 @@ const usersControllers = require('../controllers/usersControllers');
 const { signUpUsers, signInUser, signOutUser } = usersControllers
 
 Router.route('/auth/signup')
-  .post(signUpUsers)
+  .post(validator, signUpUsers)
 
 Router.route('/auth/signin')
   .post(signInUser)

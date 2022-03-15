@@ -8,7 +8,7 @@ import { FcGoogle } from "react-icons/fc"
 import { FcUnlock } from "react-icons/fc"
 import { FcCheckmark } from "react-icons/fc"
 import { FcApprove } from "react-icons/fc"
-
+import Snack from '../Snackbar';
 
 
 function SignIn(props) {
@@ -32,6 +32,7 @@ function SignIn(props) {
   
   return (
     <div className="container-signup">
+      <Snack/>
       <div className="container-form">
         <h1 className="titulo-form">Sign In</h1>
 

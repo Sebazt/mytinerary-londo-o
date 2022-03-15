@@ -11,9 +11,9 @@ import { FcCameraIdentification } from "react-icons/fc"
 import { FcInvite } from "react-icons/fc"
 import { FcCheckmark } from "react-icons/fc"
 import ApiCountry from "../apiCountrys";
+import Snack from '../Snackbar';
 
-
-function SignUp(props) {
+function SignUp(props) {  
   console.log(props)
 
 
@@ -42,9 +42,10 @@ function SignUp(props) {
   }, [])
 
 
-
+  console.table(props.snackbar);
   return (
     <div className="container-signup">
+      <Snack/>
       <div className="container-form">
         <h1 className="titulo-form">Sign Up</h1>
 
@@ -110,9 +111,10 @@ const mapDispatchToProps = {
   signUpUser: UserActions.signUpUser,
 
 }
-const mapStateToProps = (state) => {
+
+const mapStateToProps = (state) => {  /* traigo el estado de redux, nombre una variable cualquiera y el reducer es quien se carga de actualizar el estado e inreso a la var que tengo creada en redux */
   return {
-    message: state.userReducer.message,
+    snackbar: state.userReducer.snackbar,
   }
 }
 

@@ -71,10 +71,18 @@ function CardDetails(props) {
 
 
       <div>
-        <ItineraryAccordion itinerary={props.itineraries} />
+        
+        {props.itineraries.length ? (
+          props.itineraries?.map(itinerary =>
+        <ItineraryAccordion itinerary={itinerary} />
+          )
+        ) : (
+            <ItinerarieNoFound estado={props.itineraries.length ? false : true} />
+        )}
+        
       </div>
   
-      <ItinerarieNoFound estado={props.itineraries.length ? false : true} />
+      
       
     
       <div className="butonsToBack">

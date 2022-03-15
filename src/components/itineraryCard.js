@@ -44,39 +44,39 @@ if (!props.itinerary){
 }
   return (
     <div >
-      {props.itinerary?.map((itinerarie) => (
-        <div className="accordion-container" key={itinerarie._id}>
+      
+        <div className="accordion-container" key={props.itinerary._id}>
           <div className="accordio-sub">
-            <h2 className="subtitulo-accordion">{itinerarie.event}</h2>
+            <h2 className="subtitulo-accordion">{props.itinerary.event}</h2>
           </div>
 
           <div className="containeruser">
-            <h2 className="nameuser-accordion">{itinerarie.nameUser}</h2>
+            <h2 className="nameuser-accordion">{props.itinerary.nameUser}</h2>
             <div className="photouser-accordion">
-              <img src={itinerarie.imageUser} alt="ejemplo" className="userimg" /> 
+              <img src={props.itinerary.imageUser} alt="ejemplo" className="userimg" /> 
             </div>
           </div>
 
 
           <div className="accordion-items">
-            <h2 className="duration">Price: {"💵".repeat(parseInt(itinerarie.price))}</h2>
+            <h2 className="duration">Price: {"💵".repeat(parseInt(props.itinerary.price))}</h2>
           </div>
 
           <div className="accordion-items">
-            <p className="duration">{itinerarie.duration}</p>
+            <p className="duration">{props.itinerary.duration}</p>
           </div>
           
           <div className="accordion-items">
-            <img src={process.env.PUBLIC_URL+ `/imgCountry/${itinerarie.likes}`} className="item2"/>
+            <img src={process.env.PUBLIC_URL+ `/imgCountry/${props.itinerary.likes}`} className="item2"/>
           </div>
 
 
           <div className="accordion-items item4">
-            <p className="hastash">{itinerarie.hashtag}</p>            
+            <p className="hastash">{props.itinerary.hashtag}</p>            
           </div>
 
           <div className="accordion-imgcity">
-            <img src={process.env.PUBLIC_URL+ `/imgCountry/${itinerarie.imgItinerarie}`} alt="city" className="imgcity-accordion" />
+            <img src={process.env.PUBLIC_URL+ `/imgCountry/${props.itinerary.imgItinerarie}`} alt="city" className="imgcity-accordion" />
           </div>
 
         {/* Esta es la parte que despliega automaticamente */}
@@ -109,7 +109,7 @@ if (!props.itinerary){
             </Collapse>
           </div>
         </div>
-      ))}
+     
     </div>
   )
 

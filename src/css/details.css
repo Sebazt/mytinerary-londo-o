@@ -71,6 +71,7 @@
     justify-content: center;
     padding: 1rem;
     font-size: .8em;
+    margin-top: 9rem;
 }
 
 
@@ -102,6 +103,10 @@
         height: 45%;
        margin: auto;
     }
+
+    .butonsToBack{
+    margin-top: 0rem !important;
+}
 }
 
 
@@ -119,6 +124,9 @@
         height: 45%;
     }
   
+    .butonsToBack{
+    margin-top: 0rem !important;
+}
 }
 
 
@@ -136,6 +144,10 @@
         width: 45%;
         height: 45%;
     }
+
+     .butonsToBack{
+    margin-top: 4rem;
+}
 }
     
 

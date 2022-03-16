@@ -30,7 +30,7 @@
   
 }
 
-.boton-header{  
+.boton-header{
   text-decoration: none;
   margin: 0 .5rem;
   border-radius: 1rem;
@@ -43,6 +43,12 @@
   cursor: hand;
   
 }
+
+.contenedor-butons{
+  display: flex;
+  flex-direction: column;
+}
+
 
 .boton-header:active{
   text-decoration: overline;

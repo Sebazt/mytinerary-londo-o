@@ -162,7 +162,8 @@ const Navbar = (props) => {
                 onClose={handleCloseUserMenu}
               >
                 {props.user ? (
-                  <MenuItem onClick={handleCloseUserMenu}>
+                  <MenuItem onClick={handleCloseUserMenu} className="contenedor-butons">
+                    <Typography textAlign="center"><LinkRouter className='boton-header' to={"/home"}>⚙Seetings</LinkRouter></Typography>
                     <Typography textAlign="center"><LinkRouter className='boton-header' onClick={SignOut}to={"#"}>Sign Out</LinkRouter></Typography>
                   </MenuItem>
                  ) : (

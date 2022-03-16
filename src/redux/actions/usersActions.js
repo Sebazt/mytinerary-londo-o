@@ -21,8 +21,10 @@ const userActions = {
       const user = await axios.post('http://localhost:4000/api/auth/signin', { logedUser })
       console.log(user)
       if (user.data.success) {
+        localStorage.setItem('token', user.data.response.token);
         console.log(user.data.success)
         dispatch({ type: 'user', payload: user.data.response.userData });
+
       } dispatch({type: 'message',
             payload: {view: true,
                       message: user.data.message,
@@ -34,6 +36,7 @@ const userActions = {
     return async (dispatch, getState) => {
       console.log("ingrese a la función")
       const user = await axios.post('http://localhost:4000/api/auth/signout', { closeuser })
+      localStorage.removeItem('token')
       dispatch({ type: 'user', payload: null });
     }
   }

@@ -43,7 +43,7 @@ module.exports = Router
 /* ------------------------------------usuarios -------------------------------*/
 
 const usersControllers = require('../controllers/usersControllers');
-const { signUpUsers, signInUser, signOutUser } = usersControllers
+const { signUpUsers, signInUser, signOutUser, verifyEmail} = usersControllers
 
 Router.route('/auth/signup')
   .post(validator, signUpUsers)
@@ -53,5 +53,8 @@ Router.route('/auth/signin')
 
 Router.route('/auth/signout')
   .post(signOutUser)
+
+Router.route('/verify/:uniqueString') //RECIBE EL LINK DE USUARIO
+  .get(verifyEmail)
 
 module.exports = Router

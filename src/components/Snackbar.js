@@ -8,7 +8,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles } from '@material-ui/core/styles';
 import { styled } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
 
 
 function Snack(props) {
@@ -23,11 +23,12 @@ function Snack(props) {
   const MySnackbar = styled(Snackbar)({
     backgroundColor: props.snackbar.success ? '#0cf574' : '#d81159',
     color: '#fff',
-    borderRadius: '4px',
+    borderRadius: '8px',
+    border:"1px solid #000",
     padding: '6px 16px',
     fontWeight: '400',
     lineHeight: '1.43',
-    letterSpacing: '0.01071em',
+    letterSpacing: '0.01071em'
   });
 
   const classes = useStyles();
@@ -44,7 +45,7 @@ function Snack(props) {
   };
 
   return (
-    <div>
+    <div className='snackbar-alert'>
       {props.snackbar.view === true && (
         <MySnackbar
           anchorOrigin={{

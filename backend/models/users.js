@@ -9,8 +9,8 @@ const userSchema = new mongoose.Schema({
   password: [{ type: String, required: true }], 
   photoURL: { type: String, required: true },
   chooseCountry: { type: Array, required: true },
-  from: { type: Array }  /* es un array para los dif. usos que le voy dar.  */
-
+  from: { type: Array },  /* es un array para los dif. usos que le voy dar.  */
+  uniqueString: { type: String, required: true }
 })
 
 const User = mongoose.model('users', userSchema)

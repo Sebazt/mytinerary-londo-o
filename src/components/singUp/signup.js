@@ -40,7 +40,7 @@ function SignUp(props) {
 
   }
   console.log(props.message)
-  
+
 
 
   useEffect(() => {
@@ -102,12 +102,10 @@ function SignUp(props) {
           </div>
 
 
-          <button className="button-callhome2">
-            <span className="boton-google"><FcGoogle className="boton-google" /></span>  Sign in with Google
-          </button>
-          <GoogleSignUp/>
-          <FacebookSignUp />
-
+          <div id="buttons-redes">
+            <GoogleSignUp />
+            <FacebookSignUp />
+          </div>
 
           <div className="container-h2-callhome">
             <h2 className="h2-callhome ">

@@ -4,7 +4,7 @@ import React from "react";
 import { Link as LinkRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import UserActions from '../../redux/actions/usersActions';
-import { FcGoogle } from "react-icons/fc"
+
 import { FcUnlock } from "react-icons/fc"
 import { FcCheckmark } from "react-icons/fc"
 import { FcApprove } from "react-icons/fc"
@@ -13,7 +13,7 @@ import GoogleSignIn from './googleSignIn';
 
 
 function SignIn(props) {
-    console.log(props)
+  console.log(props)
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -30,10 +30,10 @@ function SignIn(props) {
     props.signInUser(logedUser)
   }
 
-  
+
   return (
     <div className="container-signup">
-     
+
       <div className="container-form">
         <h1 className="titulo-form">Sign In</h1>
 
@@ -55,12 +55,11 @@ function SignIn(props) {
           </div>
 
 
-          <button className="button-callhome2">
-            <span className="boton-google"><FcGoogle className="boton-google" /></span>  Sign in with Google
-          </button>
-            <GoogleSignIn/>
-            <FacebookSignIn/>
-          
+
+          <div id="buttons-redes">
+            <GoogleSignIn />
+            <FacebookSignIn />
+          </div>
 
 
           <div className="container-h2-callhome">
@@ -76,7 +75,7 @@ function SignIn(props) {
 }
 
 const mapDispatchToProps = {
-  signInUser:UserActions.signInUser,
+  signInUser: UserActions.signInUser,
 
 }
 

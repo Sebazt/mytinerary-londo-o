@@ -1,15 +1,32 @@
+
+.buttonsocial2{
+	width: auto;
+	height: 3.5rem;
+	font-size: 1.3em !important;
+	/* border-top-right-radius: 1rem !important;
+	border-bottom-right-radius: 1rem !important; */
+	background-color: rgb(255, 255, 255) !important;
+	font-weight: bold !important;
+	color:rgb(95, 91, 91) !important;
+	border-radius: 1rem !important;
+	overflow: hidden !important;
+}
+
+
 .buttonsocial{
 	width: auto;
-	height: 2em;
+	height: 3.5rem;
   margin: 1.5rem auto;
 	font-size: 1.5em;
   border-radius: 1rem;
+	overflow: hidden;
 	display: flex;
 	justify-content: left;
 	align-items: center;
   padding: 1rem;
 	border: 0px;
-	
+	/* border-top-left-radius: 1rem !important;
+	border-bottom-left-radius: 1rem !important; */
 }
 
 .my-facebook-button-class{
@@ -21,4 +38,15 @@
 .buttonsocial :nth-child(1){
 	margin-right: 0px !important;
 	width: 45px !important;
+	
+}
+
+
+
+
+/* -------------------- Breakpoint -480  -------------------- */
+@media (max-width: 480px){
+	.buttonsocial, .buttonsocial2{
+		margin: 1.5rem 0 0 0;
+	}
 }

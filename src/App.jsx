@@ -9,8 +9,19 @@ import CardDetails from "./components/detalle";
 import SignUp from "./components/singUp/signup";
 import SignIn from "./components/SignIn/signin";
 import Snack from "../src/components/Snackbar";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import userActions from "../src/redux/actions/usersActions";
 
-function App() {
+function App(props) {
+
+  useEffect(() => { /* verifican en el local, si este es dif de null. guarde el tok en var */
+    if (localStorage.getItem("token") !== null) {
+      const token = localStorage.getItem("token");
+      props.VerificarToken(token);
+    }
+  }, []);
+
   return (
     <>
       <Snack />
@@ -34,4 +45,8 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = {
+  VerificarToken: userActions.VerificarToken,
+};
+
+export default connect(null, mapDispatchToProps)(App);

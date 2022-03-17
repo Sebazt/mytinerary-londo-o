@@ -2,7 +2,7 @@ const User = require('../models/users')
 const bcryptjs = require('bcryptjs')
 const crypto = require('crypto');
 const nodemailer = require('nodemailer'); /* permite hacer envios desde node(backend) */
-const jwt = require('jsonwebtoken') 
+const jwt = require('jsonwebtoken')
 
 const sendEmail = async (email, uniqueString) => {
   const transporter = nodemailer.createTransport({ //DEFINIMOS EL TRASPORTE UTILIZANDO NODEMAILER
@@ -100,10 +100,10 @@ const usersControllers = {
         const nuevoUsuario = await new User({
           firstName,
           lastName,
-          email,          
+          email,
           password: [contraseñaHasheada],
           photoURL,
-          chooseCountry,          
+          chooseCountry,
           uniqueString: crypto.randomBytes(15).toString('hex'),
           emailVerificado: false,
           from: [from]
@@ -154,7 +154,7 @@ const usersControllers = {
           if (contraseñaCoincide.length > 0) { //TERERO VERIFICA CONTRASEÑA
 
             const userData = {
-              id:usuarioExiste._id,
+              id: usuarioExiste._id,
               firstName: usuarioExiste.firstName,
               email: usuarioExiste.email,
               photoURL: usuarioExiste.photoURL,
@@ -166,7 +166,7 @@ const usersControllers = {
             res.json({
               success: true,
               from: from,
-              response: {token, userData },
+              response: { token, userData },
               message: "Welcome Again " + userData.firstName,
             })
 
@@ -193,7 +193,7 @@ const usersControllers = {
               res.json({
                 success: true,
                 from: from,
-                response: {token, userData },
+                response: { token, userData },
                 message: "Welcome Again " + userData.firstName,
               })
             } else {
@@ -230,5 +230,20 @@ const usersControllers = {
     res.json(console.log(' Closed session ' + email))
   },
 
+  verificarToken: (req, res) => {
+    console.log(req.user)
+    if (!req.err) {
+      res.json({
+        success: true,
+        response: { id: req.user.id, firstName: req.user.firstName, email: req.user.email, photoURL: req.user.photoURL, from: "token" },
+        message: "Welcome again " + req.user.firstName
+      })
+    } else {
+      res.json({
+        success: false,
+        message: "Please try signIn"
+      })
+    }
+  }
 }
 module.exports = usersControllers

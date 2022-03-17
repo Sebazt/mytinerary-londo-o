@@ -47,6 +47,33 @@ const userActions = {
       localStorage.removeItem('token')
       dispatch({ type: 'user', payload: null }); /* elimino el token para deslogearlo */
     }
+  },
+  VerificarToken: (token) => {
+
+    return async (dispatch, getState) => {
+      console.log(token)
+      const user = await axios.get('http://localhost:4000/api/auth/signInToken', {
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }  /* meotod para gestionar los datos del usuario */
+      })
+      console.log(user)
+
+      if (user.data.success) {
+        dispatch({ type: 'user', payload: user.data.response });
+        dispatch({
+          type: 'message',
+          payload: {
+            view: true,
+            message: user.data.message,
+            success: user.data.success
+          }
+        });
+      } else {
+        localStorage.removeItem('token')
+      }
+
+    }
   }
 }
 

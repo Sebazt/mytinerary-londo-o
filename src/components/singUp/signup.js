@@ -103,8 +103,8 @@ function SignUp(props) {
 
 
           <div id="buttons-redes">
-            <GoogleSignUp />
-            <FacebookSignUp />
+            <GoogleSignUp countrie={countrie}/>
+            <FacebookSignUp countrie={countrie}/>
           </div>
 
           <div className="container-h2-callhome">

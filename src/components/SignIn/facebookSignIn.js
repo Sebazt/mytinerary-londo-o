@@ -24,7 +24,7 @@ function FacebookSignIn(props) {
       cssClass="buttonsocial my-facebook-button-class"
       icon="fa-facebook"
       textButton=" Facebook"
-      appId="2848979418734353"
+      appId="1670742906603180"
       autoLoad={false}
       fields="name,email,picture"
       callback={responseFacebook}

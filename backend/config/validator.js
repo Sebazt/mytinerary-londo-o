@@ -2,11 +2,11 @@ const joi = require('joi')
 
 const validator = (req, res, next) => {
   const schema = joi.object({
-    firstName: joi.string().max(20).min(2).trim().pattern(new RegExp('[a-zA-Z]')).required().messages({
+    firstName: joi.string().max(50).min(2).trim().pattern(new RegExp('[a-zA-Z]')).required().messages({
       'string.min': 'El NOMBRE debe contener mas de 2 caracteres',
       'string.max': "El nombre debe contener como maximo 20 caracteres"
     }),
-    lastName: joi.string().max(20).min(2).trim().pattern(new RegExp('[a-zA-Z]')).required().messages({
+    lastName: joi.string().max(50).min(2).trim().pattern(new RegExp('[a-zA-Z]')).required().messages({
       'string.min': 'El NOMBRE debe contener mas de 2 caracteres',
       'string.max': "El nombre debe contener como maximo 20 caracteres"
     }),

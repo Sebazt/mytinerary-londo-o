@@ -9,7 +9,7 @@ import { FcUnlock } from "react-icons/fc"
 import { FcCheckmark } from "react-icons/fc"
 import { FcApprove } from "react-icons/fc"
 import FacebookSignIn from './facebookSignIn';
-
+import GoogleSignIn from './googleSignIn';
 
 
 function SignIn(props) {
@@ -24,7 +24,7 @@ function SignIn(props) {
     const logedUser = {
       email: event.target[0].value,
       password: event.target[1].value,
-      from: "form-Signin"
+      from: "form-Signup"
     }
     formReset.reset()
     props.signInUser(logedUser)
@@ -56,9 +56,11 @@ function SignIn(props) {
 
 
           <button className="button-callhome2">
-            {/* <span className="boton-google"><FcGoogle className="boton-google" /></span>  Sign in with Google */}
-            <FacebookSignIn/>
+            <span className="boton-google"><FcGoogle className="boton-google" /></span>  Sign in with Google
           </button>
+            <GoogleSignIn/>
+            <FacebookSignIn/>
+          
 
 
           <div className="container-h2-callhome">

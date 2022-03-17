@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import "./signup.css";
 import { Link as LinkRouter } from "react-router-dom";
@@ -13,14 +13,14 @@ import { FcCheckmark } from "react-icons/fc"
 import ApiCountry from "../apiCountrys";
 
 import FacebookSignUp from './facebookSignUp';
+import GoogleSignUp from './googleSignUp';
 
 
 
-
-function SignUp(props) {  
+function SignUp(props) {
   console.log(props)
-  
-  
+
+
   const [countrie, setCountries] = useState("select...");
 
   const handleSubmit = (event) => {
@@ -40,7 +40,7 @@ function SignUp(props) {
 
   }
   console.log(props.message)
-  /* alert(props.message.message) */
+  
 
 
   useEffect(() => {
@@ -55,7 +55,7 @@ function SignUp(props) {
   console.table(props.snackbar);
   return (
     <div className="container-signup">
-      
+
       <div className="container-form">
         <h1 className="titulo-form">Sign Up</h1>
 
@@ -103,9 +103,11 @@ function SignUp(props) {
 
 
           <button className="button-callhome2">
-            {/* <span className="boton-google"><FcGoogle className="boton-google" /></span>  Sign up with Google */}
-            <FacebookSignUp />
+            <span className="boton-google"><FcGoogle className="boton-google" /></span>  Sign in with Google
           </button>
+          <GoogleSignUp/>
+          <FacebookSignUp />
+
 
           <div className="container-h2-callhome">
             <h2 className="h2-callhome ">
@@ -113,9 +115,9 @@ function SignUp(props) {
             </h2>
           </div>
 
-        </form>):(
+        </form>) : (
           <div id="ball"></div>
-        )}       
+        )}
 
       </div>
     </div>

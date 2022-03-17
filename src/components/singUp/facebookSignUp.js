@@ -2,7 +2,7 @@ import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 import { connect } from 'react-redux';
 import userActions from '../../redux/actions/usersActions';
-
+import './facebookUp.css';
 
 function FacebookSignUp(props) {
 
@@ -17,8 +17,8 @@ function FacebookSignUp(props) {
     //console.log(nombre)
     //console.log(apellido)
     console.log(props.countrie)
-    const userData = {
-      
+
+    const userData = {  /* aqui recopilo los datos que traigo de facebook, debe ser = a los datos que requiero en sign up dónde llamo este */
       firstName: fullNameSeparado[0],
       lastName: fullNameSeparado[1],
       email: res.email,
@@ -31,16 +31,18 @@ function FacebookSignUp(props) {
   }
 
   return (
+
     <FacebookLogin
       cssClass="buttonsocial my-facebook-button-class"
       icon="fa-facebook"
       textButton=" Facebook"
-      appId="2848979418734353"
+      appId="1670742906603180"
       autoLoad={false}
       fields="name,email,picture"
       callback={responseFacebook}
 
     />
+
   );
 }
 const mapDispatchToProps = {

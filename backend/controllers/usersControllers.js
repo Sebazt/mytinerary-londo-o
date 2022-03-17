@@ -64,8 +64,8 @@ const usersControllers = {
 
       if (usuarioExiste) {
         console.log(usuarioExiste.from.indexOf(from))/* va buscar en el array(from) el valor que viene desde el formulario */
-        if (usuarioExiste.from.indexOf(from) === 0) { //INDEXOF = 0 EL VALOR EXISTE EN EL INDICE EQ A TRUE -1 NO EXITE EQ A FALSE
-          res.json({ success: false, from: "signup", message: "you have already done SignUp, please do SignIn" })
+        if (usuarioExiste.from.indexOf(from) !== -1) { //INDEXOF = 0 EL VALOR EXISTE EN EL INDICE EQ A TRUE -1 NO EXITE EQ A FALSE
+          res.json({ success: false, from: "form-Signup", message: "you have already done SignUp, please do SignIn" })
         } else { /* el usuario existe en la base de datos pero no se registro de esa manera */
           const contraseñaHasheada = bcryptjs.hashSync(password, 10) /* éncripto la contraseña y los caracteres que deseo que lo haga */
           usuarioExiste.from.push(from)
@@ -78,7 +78,7 @@ const usersControllers = {
             await sendEmail(email, usuarioExiste.uniqueString) /* llama a la fun. encargada de enviar correo electronico */
             res.json({
               success: true,
-              from: "signup", //RESPONDE CON EL TOKEN Y EL NUEVO USUARIO
+              from: "form-Signup", //RESPONDE CON EL TOKEN Y EL NUEVO USUARIO
               message: "We sent you an email to validate, please verify your registration in signUp y and so add it to your methods SignIn"
             })
 
@@ -87,7 +87,7 @@ const usersControllers = {
 
             res.json({
               success: true,
-              from: "signup",
+              from: "form-Signup",
               message: "We add " + from + " to your means to carry out signIn"
             })
           }// EN ESTE PUNTO SI EXITE RESPONDE FALSE
@@ -114,7 +114,7 @@ const usersControllers = {
           await nuevoUsuario.save()
           res.json({
             success: true,
-            from: "signup",
+            from: "form-Signup",
             message: "Congratulations, your user was created with " + from
           }) // AGREGAMOS MENSAJE DE VERIFICACION
 
@@ -126,7 +126,7 @@ const usersControllers = {
 
           res.json({
             success: true,
-            from: "signup",
+            from: "form-Signup",
             message: "We sent you an email, please check it and complete your registration,we are waiting for you here"
           }) // AGREGAMOS MENSAJE DE VERIFICACION
         }
@@ -147,7 +147,7 @@ const usersControllers = {
         res.json({ success: false, message: "You haven't registered yet, do the signUp" })
 
       } else {    /* el usuario existe */
-        if (from !== "form-Signin") {
+        if (from !== "form-Signup") {
 
           let contraseñaCoincide = usuarioExiste.password.filter(pass => bcryptjs.compareSync(password, pass))/* se compara la contraseña con la que se guarda en la base de daos a través de esté filtro */
 
@@ -157,6 +157,7 @@ const usersControllers = {
               id:usuarioExiste._id,
               firstName: usuarioExiste.firstName,
               email: usuarioExiste.email,
+              photoURL: usuarioExiste.photoURL,
               from: usuarioExiste.from
             }
             await usuarioExiste.save()
@@ -173,7 +174,7 @@ const usersControllers = {
             res.json({
               success: false,
               from: from,
-              message: "You have not registered with" + from + "you must first do the signUp with " + from
+              message: "You have not registered with " + from + " you must first do the signUp with " + from
             })
           }
         } else {

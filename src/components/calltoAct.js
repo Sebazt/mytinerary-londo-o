@@ -7,7 +7,9 @@ export default function ButonCall() {
   return (
       <div className="container-call">
         <LinkRouter to={"/cities"}>
-        <button className="botonaction">Go cities</button>
+        <button className="button-callhome">Go to Cities
+          <span></span>
+        </button>
         </LinkRouter>
       </div>  
   );

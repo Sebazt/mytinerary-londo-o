@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useEffect } from "react";
 import "./signup.css";
 import { Link as LinkRouter } from "react-router-dom";
@@ -11,11 +11,17 @@ import { FcCameraIdentification } from "react-icons/fc"
 import { FcInvite } from "react-icons/fc"
 import { FcCheckmark } from "react-icons/fc"
 import ApiCountry from "../apiCountrys";
-import Snack from '../Snackbar';
+
+import FacebookSignUp from './facebookSignUp';
+
+
+
 
 function SignUp(props) {  
   console.log(props)
-
+  
+  
+  const [countrie, setCountries] = useState("select...");
 
   const handleSubmit = (event) => {
     event.preventDefault()  /* evita que la pag se refresque */
@@ -26,7 +32,7 @@ function SignUp(props) {
       email: event.target[2].value,
       password: event.target[3].value,
       photoURL: event.target[4].value,
-      chooseCountry: event.target[5].value,
+      chooseCountry: countrie,
       from: "form-Signup"  /* desde aquí se cargaron los datos */
     }
     formReset.reset()
@@ -41,15 +47,29 @@ function SignUp(props) {
     window.scrollTo(0, 0)
   }, [])
 
+  function selectCountries(event) {
+    setCountries(event.target.value);
+  }
+
 
   console.table(props.snackbar);
   return (
     <div className="container-signup">
-      <Snack/>
+      
       <div className="container-form">
         <h1 className="titulo-form">Sign Up</h1>
 
-        <form onSubmit={handleSubmit} id="formRese">
+        <label htmlFor="country" className="form-selector">
+          <select className="seleccionador" defaultValue={"default"} name="pais" id="pais" onChange={selectCountries}>
+            <option>Choose your country</option>
+            {ApiCountry.map(country => {
+              return (
+                <option key={country.name} value={country.name}>{country.name}</option>
+              )
+            })}
+          </select>
+        </label>
+        {countrie !== "select..." ? (<form onSubmit={handleSubmit} id="formRese">
           <div className="inputbox">
             <input type="text" required="required" />
             <span><FcVoicePresentation /> First Name</span>
@@ -75,16 +95,7 @@ function SignUp(props) {
             <span><FcCameraIdentification /> Photo URL</span>
           </div>
 
-          <label htmlFor="country" className="form-selector">
-            <select className="seleccionador" defaultValue={"default"} name="pais" id="pais">
-              <option>Choose your country</option>
-              {ApiCountry.map(country => {
-                return(
-                  <option key={country.name} value={country.name}>{country.name}</option>
-                )
-              })}              
-            </select>
-          </label>
+
 
           <div className="form-submit">
             <button type="submit" className="boton-submit"><FcCheckmark className="boton-submit2" /></button>
@@ -92,7 +103,8 @@ function SignUp(props) {
 
 
           <button className="button-callhome2">
-            <span className="boton-google"><FcGoogle className="boton-google" /></span>  Sign up with Google
+            {/* <span className="boton-google"><FcGoogle className="boton-google" /></span>  Sign up with Google */}
+            <FacebookSignUp />
           </button>
 
           <div className="container-h2-callhome">
@@ -100,7 +112,10 @@ function SignUp(props) {
               Already have an account? <LinkRouter to={"/signin"} className="h2-callsign"><span >Sign in here !</span></LinkRouter>
             </h2>
           </div>
-        </form>
+
+        </form>):(
+          <div id="ball"></div>
+        )}       
 
       </div>
     </div>

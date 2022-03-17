@@ -22,10 +22,7 @@ const validator = (req, res, next) => {
       'string.min': 'El NOMBRE debe contener mas de 2 caracteres',
       'string.max': "El nombre debe contener como maximo 20 caracteres"
     }),
-    chooseCountry: joi.string().min(2).trim().pattern(new RegExp('[a-zA-Z]')).required().messages({
-      'string.min': 'El NOMBRE debe contener mas de 2 caracteres',
-      'string.max': "El nombre debe contener como maximo 20 caracteres"
-    }),
+    chooseCountry: joi.string(),
 
     from: joi.string()
   })

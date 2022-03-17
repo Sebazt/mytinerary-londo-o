@@ -8,7 +8,8 @@ import { FcGoogle } from "react-icons/fc"
 import { FcUnlock } from "react-icons/fc"
 import { FcCheckmark } from "react-icons/fc"
 import { FcApprove } from "react-icons/fc"
-import Snack from '../Snackbar';
+import FacebookSignIn from './facebookSignIn';
+
 
 
 function SignIn(props) {
@@ -32,7 +33,7 @@ function SignIn(props) {
   
   return (
     <div className="container-signup">
-      <Snack/>
+     
       <div className="container-form">
         <h1 className="titulo-form">Sign In</h1>
 
@@ -55,7 +56,8 @@ function SignIn(props) {
 
 
           <button className="button-callhome2">
-            <span className="boton-google"><FcGoogle className="boton-google" /></span>  Sign in with Google
+            {/* <span className="boton-google"><FcGoogle className="boton-google" /></span>  Sign in with Google */}
+            <FacebookSignIn/>
           </button>
 
 

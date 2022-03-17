@@ -176,6 +176,39 @@
 }
 
 
+#ball{
+    width: 60px;
+    height: 60px;
+    margin: 2.5rem 0 2.5rem 7rem;
+    position: absolute;
+    top: 18rem;
+    left: 20%;
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff93,
+      #ffcccc
+    );
+    animation-name: fade;
+    animation-duration: 5s;
+    animation-iteration-count:infinite;
+}
+
+@keyframes fade {
+    50% {
+      left: 60%;
+    }
+
+  }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -216,6 +249,10 @@
  .button-callhome2{
    width: 100%;
    font-size: 1.3em;
+ }
+
+ #ball{
+   display: none;
  }
 
 }
@@ -263,6 +300,10 @@
    width: 100%;
    font-size: 1.3em;
  }
+ 
+ #ball{
+   display: none;
+ }
     
 }
 
@@ -271,17 +312,26 @@
 
 /* -------------------- Breakpoint -1000 -------------------- */
 @media (max-width: 1000px){
-    
+    #ball{
+   display: none;
+ }
 }
 
 
 /* -------------------- Breakpoint -1200 -------------------- */
 @media (max-width: 1200px){
-    
+    #ball{
+    width: 50px;
+    height: 50px;
+    margin: 2rem 0 2.5rem 6rem;
+}
 }
 
 
 /* -------------------- Breakpoint -1330 -------------------- */
 @media (max-width: 1500px){
-    
+    #ball{
+    width: 50px;
+    height: 50px;
+}
 }

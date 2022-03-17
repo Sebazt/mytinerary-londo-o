@@ -2,7 +2,7 @@ const User = require('../models/users')
 const bcryptjs = require('bcryptjs')
 const crypto = require('crypto');
 const nodemailer = require('nodemailer'); /* permite hacer envios desde node(backend) */
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken') 
 
 const sendEmail = async (email, uniqueString) => {
   const transporter = nodemailer.createTransport({ //DEFINIMOS EL TRASPORTE UTILIZANDO NODEMAILER
@@ -160,7 +160,7 @@ const usersControllers = {
               from: usuarioExiste.from
             }
             await usuarioExiste.save()
-            const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })
+            const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 }) /* aqui paso los datos que pase en user dato y paso el parametro de enciptado */
 
             res.json({
               success: true,

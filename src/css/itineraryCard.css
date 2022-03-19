@@ -139,7 +139,6 @@
   justify-content: center;
   margin-top: 7rem;
   margin-right: 40rem;
-  
 }
 
 .imgcity-accordion{
@@ -176,6 +175,10 @@
   background-color: #83c5be;
 }
 
+
+
+/* -------------actividades---------------- */
+
 .accordion-hid{
   display: flex;
   flex-flow: row wrap;
@@ -183,8 +186,10 @@
   align-content: center;
   margin: auto;
   width: 100%;
-  height: 40vh;
+  height: 80%;
   background-color: #000;
+  overflow: hidden;
+ 
 }
 
 .card-accordion{
@@ -192,28 +197,34 @@
   flex-flow: column wrap;
   background-color: pink;
   width: 28%;
-  
+  height: 100%;
   margin: .7rem;
+  border-radius: 1rem;
 }
 
 #items-card-accordion{
   width: 100%;
   height: 100%;
+   border-radius: 1rem;
 }
 
 .image-activities{
   width: 100%;
+  object-fit: scale-down;
+   border-top-left-radius: 1rem;
+   border-top-right-radius: 1rem;
 }
 
-/* .titulo-accordion{
-  width: 100%;
-  height: 10vh;
-  background-color: #006d77;
+#titulo-accordion{
+  margin-top: .5rem;
+  background-color: yellow;
+  height: 100%;
   text-align: center;
-  color: wheat;
   font-size: bold;
   font-weight: 900;
-} */
+}
+
+
 
 
 

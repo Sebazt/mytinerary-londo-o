@@ -102,6 +102,20 @@ function ItineraryAccordion(props) {
                   </div>
                 </div>
 
+                <div className="card-accordion">
+                  <div id="items-card-accordion">
+                    <img src={process.env.PUBLIC_URL + `/imgCountry/${props.itinerary.imgItinerarie}`} alt="city" className="image-activities" />
+                    <h2 id="titulo-accordion">Card title</h2>
+                  </div>
+                </div>
+
+                <div className="card-accordion">
+                  <div id="items-card-accordion">
+                    <img src={process.env.PUBLIC_URL + `/imgCountry/${props.itinerary.imgItinerarie}`} alt="city" className="image-activities" />
+                    <h2 id="titulo-accordion">Card title</h2>
+                  </div>
+                </div>
+
               </div>
 
 

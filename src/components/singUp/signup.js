@@ -25,7 +25,7 @@ function SignUp(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault()  /* evita que la pag se refresque */
-    let formReset = document.querySelector('#formRese')
+    let formReset = document.querySelector('#formRese')  /* no se debe utilizar el document.. se debe utilizar el hook   "useReset" */
     const userData = {
       firstName: event.target[0].value,
       lastName: event.target[1].value,

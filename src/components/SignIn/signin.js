@@ -21,6 +21,7 @@ function SignIn(props) {
   const handleSubmit = (event) => {
     event.preventDefault()
     let formReset = document.querySelector('#formResete')
+    
     const logedUser = {
       email: event.target[0].value,
       password: event.target[1].value,

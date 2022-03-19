@@ -142,7 +142,8 @@ const usersControllers = {
     const { email, password, from } = req.body.logedUser
     try {
       const usuarioExiste = await User.findOne({ email }) /* aqui a través del email busco si el usuario existe */
-
+      /* const indexpass = usuarioExiste.from.indexOf(from);
+      console.log(usuarioExiste.password[indexpass]); */
       if (!usuarioExiste) {// PRIMERO VERIFICA QUE EL USUARIO EXISTA
         res.json({ success: false, message: "You haven't registered yet, do the signUp" })
 

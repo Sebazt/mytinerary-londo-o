@@ -54,7 +54,7 @@ const userActions = {
       console.log(token)
       const user = await axios.get('http://localhost:4000/api/auth/signInToken', {
         headers: {
-          'Authorization': 'Bearer ' + token
+          Authorization: 'Bearer ' + token
         }  /* meotod para gestionar los datos del usuario */
       })
       console.log(user)

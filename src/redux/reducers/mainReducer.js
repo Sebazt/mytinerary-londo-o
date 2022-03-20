@@ -5,14 +5,15 @@ import { combineReducers } from 'redux'
 import citiesReducer from './citiesReducer'
 import userReducer from './usersReducer'
 import itinerariesReducer from './itinerariesReducer'
-
+import activitiesReducer from './activitiesReducer'
 
 
 const mainReducer = combineReducers({
  
     citiesReducer,
     itinerariesReducer,
-    userReducer
+    userReducer,
+    activitiesReducer
     
 })
 

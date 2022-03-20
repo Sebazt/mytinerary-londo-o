@@ -106,6 +106,7 @@ const mapStateToProps = (state) => {
     auxiliar: state.citiesReducer.auxiliar,
     filterCities: state.citiesReducer.filterCities,
     itineraries: state.itinerariesReducer.itineraries
+    
   }
 }
 

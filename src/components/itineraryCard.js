@@ -10,6 +10,9 @@ import IconButton from "@mui/material/IconButton";
 /* import WebConstructor from '../assets/webConstruction.png' */
 import SportsMotorsportsIcon from '@mui/icons-material/SportsMotorsports';
 
+import { connect } from "react-redux";
+import activitiesAction from '../redux/actions/ActivitiesAction';
+import ActivityCard from "./activities";
 
 
 const ExpandMore = styled((props) => {
@@ -25,7 +28,8 @@ const ExpandMore = styled((props) => {
 
 
 function ItineraryAccordion(props) {
-
+  
+  
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -33,15 +37,15 @@ function ItineraryAccordion(props) {
   };
 
 
-
-
+   
+  
   /* console.log(props.itineraries) */
   if (!props.itinerary) {
     return (<h1>esta cargando</h1>)
   }
   return (
     <div >
-
+      
       <div className="accordion-container" key={props.itinerary._id}>
         <div className="accordio-sub">
           <h2 className="subtitulo-accordion">{props.itinerary.event}</h2>
@@ -92,33 +96,9 @@ function ItineraryAccordion(props) {
 
 
             <CardContent>
-              <div className="accordion-hid">
-                {/* <img src={WebConstructor} alt="Page in Construction" className='img-contructo' /> */}
-                
-                <div className="card-accordion">
-                  <div id="items-card-accordion">
-                    <img src={process.env.PUBLIC_URL + `/imgCountry/${props.itinerary.imgItinerarie}`} alt="city" className="image-activities" />
-                    <h2 id="titulo-accordion">Card title</h2>
-                  </div>
-                </div>
-
-                <div className="card-accordion">
-                  <div id="items-card-accordion">
-                    <img src={process.env.PUBLIC_URL + `/imgCountry/${props.itinerary.imgItinerarie}`} alt="city" className="image-activities" />
-                    <h2 id="titulo-accordion">Card title</h2>
-                  </div>
-                </div>
-
-                <div className="card-accordion">
-                  <div id="items-card-accordion">
-                    <img src={process.env.PUBLIC_URL + `/imgCountry/${props.itinerary.imgItinerarie}`} alt="city" className="image-activities" />
-                    <h2 id="titulo-accordion">Card title</h2>
-                  </div>
-                </div>
-
-              </div>
-
-
+              <ActivityCard id={props.itinerary._id}/>
+              {console.log(props.itinerary._id)}
+              
               <ExpandMore
                 expand={expanded}
                 onClick={handleExpandClick}
@@ -138,5 +118,14 @@ function ItineraryAccordion(props) {
 
 }
 
+const mapDispatchToProps = {
+  fetchearActivity: activitiesAction.fetchearActivity,
+}
 
-export default ItineraryAccordion
+const mapStateToProps = (state) => {
+  return {
+    activities: state.activitiesReducer.activities,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItineraryAccordion)

@@ -9,7 +9,7 @@ const activitiesSchema = new mongoose.Schema({
   tittle2: { type: String, required: true },
   imageactivity3: { type: String, required: true },
   tittle3: { type: String, required: true },
-  itinerary: { type: mongoose.Types.ObjectId, ref: 'itineraries', required: true }
+  itinerary: { type: String, required: true },
 })
 
 

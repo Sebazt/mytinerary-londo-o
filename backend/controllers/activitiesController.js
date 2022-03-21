@@ -27,14 +27,14 @@ const ActivitiesController = {
     let error = null
 
     try {
-      activities = await Activities.findOne({ _id: id })
+      activities = await Activities.find({ itinerary: id })
       console.log(activities)
     } catch (err) {
       error = err
       console.log(error)
     }
     res.json({
-      response: error ? 'ERROR' : activities,
+      response: error ? 'ERROR' : { activities },
       success: error ? false : true,
       error: error
     })

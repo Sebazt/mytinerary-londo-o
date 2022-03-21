@@ -13,6 +13,8 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import userActions from "../src/redux/actions/usersActions";
 
+
+
 function App(props) {
 
   useEffect(() => { /* verifican en el local, si este es dif de null. guarde el tok en var */
@@ -34,8 +36,9 @@ function App(props) {
             <Route path="*" element={<HomePag />} />{" "}
             {/* si hay un error general */}
             <Route path="/cities" element={<PagCities />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/signin" element={<SignIn />} />
+
+            {!props.user&&<Route path="/signup" element={<SignUp />} />}
+            {!props.user&&<Route path="/signin" element={<SignIn />} />}
             <Route path="/cities/details/:id" element={<CardDetails />} />
           </Routes>
           <FooterPag />
@@ -49,4 +52,12 @@ const mapDispatchToProps = {
   VerificarToken: userActions.VerificarToken,
 };
 
-export default connect(null, mapDispatchToProps)(App);
+const mapStateToProps = (state) =>{
+  return{
+
+    user:state.userReducer.user,
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

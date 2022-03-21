@@ -1,21 +1,30 @@
 /* especifican de que forma cambia el estado de la app */
 const initialState = {
   activities: [],
-  aux: [],
+  auxiliar: [],
+  filterActivities: [],
+  activitiesByItinerary: []
+
 }
 
 const activitiesReducer = (state = initialState, action) => {
 
   switch (action.type) {
-    case 'fetchAcitivities': /* este caso se solicita en en actions, a través del dispatch */
+    case 'fetchActivities':
 
       return {
         ...state,
         activities: action.payload,
-        aux: action.payload,
-        filteractivities: action.payload
+        auxiliar: action.payload,
+        // filterActivities: action.payload
+
       }
 
+    case "fetchearUnaActivity":
+      return {
+        ...state,
+        activitiesByItinerary: action.payload,
+      }
 
     case "filterActivitiesForItinerary":
       let retorno = action.payload
@@ -24,10 +33,9 @@ const activitiesReducer = (state = initialState, action) => {
         ...state,
         activities: retorno
       }
-
     default:
       return state
-  }       /* es caso de que no retorne un caso, devuelve el estado como inicio */
+  }
 
 
 }

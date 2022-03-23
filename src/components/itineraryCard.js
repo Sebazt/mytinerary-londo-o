@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import axios from 'axios';
+import React from "react";
 import "../css/itineraryCard.css";
 import { styled } from "@mui/material/styles";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
-/* import WebConstructor from '../assets/webConstruction.png' */
+
 import SportsMotorsportsIcon from '@mui/icons-material/SportsMotorsports';
 
 import { connect } from "react-redux";

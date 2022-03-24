@@ -74,7 +74,7 @@ function CardDetails(props) {
         
         {props.itineraries.length ? (
           props.itineraries?.map(itinerary =>
-        <ItineraryAccordion itinerary={itinerary} />
+        <ItineraryAccordion itinerary={itinerary} id={id} />
           )
         ) : (
             <ItinerarieNoFound estado={props.itineraries.length ? false : true} />

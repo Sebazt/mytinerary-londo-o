@@ -84,6 +84,20 @@
   font-size: 1.5em;
 }
 
+.likeDislike{
+   display: flex;
+   font-size: 2em;
+   width: 100%;
+   justify-content: flex-end;
+   margin-right: 5rem;
+ }
+
+ .botonLike{
+   border: none;
+   background-color: transparent;
+   margin-right: .2rem;
+ }
+
 
 .item1{
   width: 7.5%;
@@ -138,7 +152,7 @@
   display: flex;
   justify-content: center;
   margin-top: 7rem;
-  margin-right: 40rem;
+  margin-right: 43rem;
 }
 
 .imgcity-accordion{
@@ -279,6 +293,7 @@
    align-self: center;
  }
 
+ 
 /* main accordion */
 
  
@@ -516,6 +531,11 @@
    font-size: .6em;
  }
 
+ .likeDislike{
+   font-size: 1.5em;
+   justify-content:center;
+   
+ }
     
 }
 

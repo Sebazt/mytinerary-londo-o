@@ -21,7 +21,7 @@ Router.route('/allcities/:id')
 /* ------------------------------------itinerarie -------------------------------*/
 
 const itinerariesController = require('../controllers/itinerariosController')
-const { obtenerItineraries, obtenerUnItinerario, cargarItinerario, borrarItinerario, modificarItinerario, obtenerItinerarioPorIdCiudad } = itinerariesController
+const { obtenerItineraries, obtenerUnItinerario, cargarItinerario, borrarItinerario, modificarItinerario, obtenerItinerarioPorIdCiudad, likeDislike} = itinerariesController
 
 Router.route('/allitineraries')
   .get(obtenerItineraries)
@@ -36,6 +36,10 @@ Router.route('/allitineraries/:id')
 
 Router.route('/allitineraries/ciudad/:id')
   .get(obtenerItinerarioPorIdCiudad)
+
+
+Router.route('/likesDislike/:id')
+.put(passport.authenticate("jwt", { session: false }), likeDislike)
 
 module.exports = Router
 
@@ -83,6 +87,7 @@ Router.route('/allactivities/:id')
 
 Router.route('/allactivities/itinerary/:id')
   .get(obtenerActividadporItinerario)
+
 
 
 

@@ -52,6 +52,25 @@ const itinerariesActions = {
             const res = await axios.get(`http://localhost:4000/api/allitineraries/ciudad/${id}`)
             dispatch({type: "filterItinerarieForCities", payload:res.data.respuesta})
         }
+    },
+
+    likeDislike: (id) => {
+        const token = localStorage.getItem('token')
+        return async () => {
+            try {
+                let response = await axios.put(`http://localhost:4000/api/likesDislike/${id}`, {},
+                    {
+                        headers: {
+                            Authorization: "Bearer " + token
+                        }
+                    })
+                console.log(response)
+                return response
+
+            } catch (error) {
+                console.log(error)
+            }
+        }
     }
 
 

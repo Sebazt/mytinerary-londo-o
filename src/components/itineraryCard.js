@@ -6,7 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
-
+import commentsActions from '../redux/actions/commentsAction'
 import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
 import itinerariesActions from "../redux/actions/itinerariesAction";
 import { connect } from "react-redux";
@@ -25,8 +25,11 @@ const ExpandMore = styled((props) => {
 
 function ItineraryAccordion(props) {
   const [reload, setReload] = useState(false);
-
   const [expanded, setExpanded] = useState(false);
+  const [inputText, setInputText] = useState()
+  const [modifi, setModifi] = useState()
+  const [itinerary, setItinerary] = useState()
+  console.log(props)
 
   useEffect(() => {
     props.filterItinerarieForCity(props.id);
@@ -46,6 +49,35 @@ function ItineraryAccordion(props) {
 
     setReload(!reload);
   }
+
+
+  async function cargarComentario(event) {
+
+    const commentData = {
+      itinerary: props.itinerary._id,
+      comment: inputText,
+    }
+    await props.addComment(commentData)
+      .then(response => setItinerary(response.data.response.nuevoComment), setInputText(""))
+  }
+
+  async function modificarComentario(event) {
+    const commentData = {
+      commentID: event.target.id,
+      comment: modifi,
+    }
+    await props.modifiComment(commentData)
+    setReload(!reload)
+  }
+
+  async function eliminarComentario(event) {
+    await props.deleteComment(event.target.id)
+    setReload(!reload)
+  }
+
+  
+  
+  
 
   return (
     <div>
@@ -136,6 +168,56 @@ function ItineraryAccordion(props) {
               <ActivityCard id={props.itinerary._id} />
               {console.log(props.itinerary._id)}
 
+              
+
+              <div className="accordion-body">
+
+
+                {props.itinerary?.comments.map(comment =>
+                  <>
+                    {comment.userID?._id === props.user?.id ?
+                      
+                      <div className="cartacoments" key={comment._id}>
+                        
+                        <div className="card-header">
+                          <h1 className="primer-name"> {comment.userID?.firstName}</h1>
+                        </div>
+                        <div className="card-body">
+                          <p className="card-text">{comment.comment}</p>
+                        </div>
+                      </div> :
+
+                      <div className="cartacoments">
+                        <div className="card-header primer-name">
+                          <h1 className="primer-name">{comment.userID.firstName}</h1>
+                          {console.log(comment.userID.firstName)}
+                        </div>
+                        <div className="card-body ">
+                          <textarea type="text" className="card-text textComments" onChange={(event) => setModifi(event.target.value)} defaultValue={comment.comment} />
+                          <button id={comment._id} onClick={modificarComentario} class="btn btn-primary">Modificar</button>
+                          <button id={comment._id} onClick={eliminarComentario} class="btn btn-primary">Eliminar</button>
+                        </div>
+                      </div>
+
+                    }
+                  </>
+                )}
+
+                {props.user ?
+                  <div className="">
+                    <div className="card-header">
+                      DEJA TU COMENTARIO !
+                    </div>
+                    <div className="card-body ">
+                      <textarea onChange={(event) => setInputText(event.target.value)} className="card-text textComments" value={inputText} />
+                      <button onClick={cargarComentario} className="btn btn-primary">Cargar</button>
+                    </div>
+                  </div> :
+                  <h1 className="h1-alerta">Sign in and leave your comment </h1>
+                }
+              </div>
+
+
               <ExpandMore
                 expand={expanded}
                 onClick={handleExpandClick}
@@ -157,6 +239,10 @@ const mapDispatchToProps = {
   fetchearActivity: activitiesAction.fetchearActivity,
   likeDislike: itinerariesActions.likeDislike,
   filterItinerarieForCity: itinerariesActions.filterItinerarieForCity,
+  addComment: commentsActions.addComment,
+  modifiComment: commentsActions.modifiComment,
+  deleteComment: commentsActions.deleteComment
+
 };
 
 const mapStateToProps = (state) => {

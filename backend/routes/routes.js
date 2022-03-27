@@ -21,7 +21,7 @@ Router.route('/allcities/:id')
 /* ------------------------------------itinerarie -------------------------------*/
 
 const itinerariesController = require('../controllers/itinerariosController')
-const { obtenerItineraries, obtenerUnItinerario, cargarItinerario, borrarItinerario, modificarItinerario, obtenerItinerarioPorIdCiudad, likeDislike} = itinerariesController
+const { obtenerItineraries, obtenerUnItinerario, cargarItinerario, borrarItinerario, modificarItinerario, obtenerItinerarioPorIdCiudad, likeDislike } = itinerariesController
 
 Router.route('/allitineraries')
   .get(obtenerItineraries)
@@ -39,7 +39,7 @@ Router.route('/allitineraries/ciudad/:id')
 
 
 Router.route('/likesDislike/:id')
-.put(passport.authenticate("jwt", { session: false }), likeDislike)
+  .put(passport.authenticate("jwt", { session: false }), likeDislike)
 
 module.exports = Router
 
@@ -90,5 +90,17 @@ Router.route('/allactivities/itinerary/:id')
 
 
 
+
+/* ------------------------------------comentarios -------------------------------*/
+
+const commentsControllers = require('../controllers/commentsController')
+const { addComment, modifiComment, deleteComment } = commentsControllers
+
+Router.route('/itinerary/comment')
+  .post(passport.authenticate('jwt', { session: false }), addComment)
+  .put(passport.authenticate('jwt', { session: false }), modifiComment)
+
+Router.route('/itinerary/comment/:id')
+  .post(passport.authenticate('jwt', { session: false }), deleteComment)
 
 module.exports = Router

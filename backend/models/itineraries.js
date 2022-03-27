@@ -12,7 +12,10 @@ const itinerariesSchema = new mongoose.Schema({
     duration:{type:String,required:true},
     likes:{type:Array},
     hashtag:{type:String,required:true},  /* este despues es un modelo aparte */
-    comments:{type:Array,required:true},
+    comments:[{
+        comment:{type:String},
+        userID: {type:mongoose.Types.ObjectId, ref:'users'}
+    }],
     ciudad: {type: mongoose.Types.ObjectId, ref:'ciudades', required:true}
 })
 

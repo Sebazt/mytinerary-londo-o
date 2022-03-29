@@ -3,7 +3,7 @@
 # dependencies
 /backend/node_modules
 /node_modules
-.env
+#/backend/.env  en un proyecto formal debe estar en el gitignore.
 /.pnp
 .pnp.js
 

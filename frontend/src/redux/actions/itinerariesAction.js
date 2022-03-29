@@ -2,55 +2,55 @@ import axios from 'axios';
 
 const itinerariesActions = {
     /* redux no permite que las acciones sean asyncronas, por el el async esta junto al return*/
-    fetchearItineraries: () =>{
-       return async(dispatch, getState) => {
-            const res = await axios.get('http://localhost:4000/api/allitineraries')
-            dispatch({type:'fetchItinerary', payload:res.data.respuesta.itineraries})/* despacho pedido */
+    fetchearItineraries: () => {
+        return async (dispatch, getState) => {
+            const res = await axios.get('https://mytinerary-sebastian.herokuapp.com/api/allitineraries')
+            dispatch({ type: 'fetchItinerary', payload: res.data.respuesta.itineraries })/* despacho pedido */
             /* payload se utiliza para utilizar el state, es una carga */
-       }
+        }
     },
 
-    borrarItineraries: (id)=>{
-        return async(dispatch, getState) => {
+    borrarItineraries: (id) => {
+        return async (dispatch, getState) => {
             try {
 
-                const respuesta = await axios.delete('http://localhost:4000/api/allitineraries/'+id)
+                const respuesta = await axios.delete('https://mytinerary-sebastian.herokuapp.com/api/allitineraries/' + id)
 
-                dispatch({type:'deleteItinerary', payload:respuesta.data.respuesta})
+                dispatch({ type: 'deleteItinerary', payload: respuesta.data.respuesta })
 
-            }catch(err){
+            } catch (err) {
                 console.log(err)
             }
         }
     },
-    
-    filtrarItineraries: (itineraries, value)=>{
 
-        return (dispatch,getState)=>{
-            dispatch({type:'filtroItinerary', payload:{itineraries, value}})
+    filtrarItineraries: (itineraries, value) => {
+
+        return (dispatch, getState) => {
+            dispatch({ type: 'filtroItinerary', payload: { itineraries, value } })
         }
     },
 
-    cargarItineraries: (name,itineraries)=>{
-        return async(dispatch,getState)=>{
-            const respuesta = await axios.post('http://localhost:4000/api/allitineraries',{name,itineraries})
-            dispatch({type:'cargarItinerary', payload:respuesta.data.respuesta})
-
-        }
-    },
-    
-    fetchearUnItinerary: (id) =>{
+    cargarItineraries: (name, itineraries) => {
         return async (dispatch, getState) => {
-            const res = await axios.get("http://localhost:4000/api/allitineraries"+id)
+            const respuesta = await axios.post('https://mytinerary-sebastian.herokuapp.com/api/allitineraries', { name, itineraries })
+            dispatch({ type: 'cargarItinerary', payload: respuesta.data.respuesta })
+
+        }
+    },
+
+    fetchearUnItinerary: (id) => {
+        return async (dispatch, getState) => {
+            const res = await axios.get("https://mytinerary-sebastian.herokuapp.com/api/allitineraries" + id)
             return (res.data.respuesta)
         }
     },
 
-    filterItinerarieForCity: (id) =>{
+    filterItinerarieForCity: (id) => {
 
-        return async(dispatch, getState) =>{
-            const res = await axios.get(`http://localhost:4000/api/allitineraries/ciudad/${id}`)
-            dispatch({type: "filterItinerarieForCities", payload:res.data.respuesta})
+        return async (dispatch, getState) => {
+            const res = await axios.get(`https://mytinerary-sebastian.herokuapp.com/api/allitineraries/ciudad/${id}`)
+            dispatch({ type: "filterItinerarieForCities", payload: res.data.respuesta })
         }
     },
 
@@ -58,7 +58,7 @@ const itinerariesActions = {
         const token = localStorage.getItem('token')
         return async () => {
             try {
-                let response = await axios.put(`http://localhost:4000/api/likesDislike/${id}`, {},
+                let response = await axios.put(`https://mytinerary-sebastian.herokuapp.com/api/likesDislike/${id}`, {},
                     {
                         headers: {
                             Authorization: "Bearer " + token

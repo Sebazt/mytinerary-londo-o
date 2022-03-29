@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.39d8aa47.css",
+    "main.js": "/static/js/main.a00a03c9.js",
+    "static/js/787.94fce90e.chunk.js": "/static/js/787.94fce90e.chunk.js",
+    "static/media/video.mp4": "/static/media/video.6b5d3840e5bc132d7337.mp4",
+    "static/media/video-city.mp4": "/static/media/video-city.c3ff7d52f992a81e56c4.mp4",
+    "static/media/plantilla3.jpg": "/static/media/plantilla3.919128b69ae4c5803b4e.jpg",
+    "static/media/mapworld.png": "/static/media/mapworld.468ad2660ef024254a3e.png",
+    "static/media/cat.png": "/static/media/cat.0c41e385697345d64a58.png",
+    "static/media/zeta.png": "/static/media/zeta.496f72883d299885971a.png",
+    "static/media/mundo.png": "/static/media/mundo.3b6bd23d022bf03f726e.png",
+    "static/media/logo.png": "/static/media/logo.0f6b38ddc69e76fb1ec2.png",
+    "static/media/bike.gif": "/static/media/bike.cec3c8f1d6adf9df065b.gif",
+    "static/media/robot-nofound.png": "/static/media/robot-nofound.117338645f74ef36986c.png",
+    "static/media/viaje.png": "/static/media/viaje.f4f6541075961c97d0db.png",
+    "index.html": "/index.html",
+    "main.39d8aa47.css.map": "/static/css/main.39d8aa47.css.map",
+    "main.a00a03c9.js.map": "/static/js/main.a00a03c9.js.map",
+    "787.94fce90e.chunk.js.map": "/static/js/787.94fce90e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.39d8aa47.css",
+    "static/js/main.a00a03c9.js"
+  ]
+}

@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server",
+    "heroku-postbuild":"cd frontend && npm install && npm run build"
   },
   "author": "Juan Sebastian Londoño",
   "license": "ISC",

@@ -48,7 +48,7 @@ const usersControllers = {
     if (user) {
       user.emailVerificado = true //COLOCA EL CAMPO emailVerified en true
       await user.save()
-      res.redirect("https://mytinerary-sebastian.herokuapp.com") //REDIRECCIONA AL USUARIO A UNA RUTA DEFINIDA
+      res.redirect("https://mytinerary-sebastian.herokuapp.com/signin") //REDIRECCIONA AL USUARIO A UNA RUTA DEFINIDA
       //return  res.json({success:true, response:"Su email se ha verificado correctamente"})
     }
     else { res.json({ success: false, response: "Your email has not been verified" }) }

@@ -334,8 +334,10 @@
  }
 
  .photouser-accordion{
-  height: 80%;
-  margin: auto;
+   position: relative;
+  height: 60%;
+  margin: 0;
+  left: -2rem;
  }
 
  .nameuser-accordion{
@@ -397,6 +399,8 @@
   width: 100% !important;
  }
 
+
+ 
 }
 
 
@@ -410,6 +414,7 @@
   margin: 1rem auto 2rem;
   width: 90%;
   min-height: 70vh;
+  overflow: hidden;
  }
 
 

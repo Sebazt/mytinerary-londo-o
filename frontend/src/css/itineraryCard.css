@@ -274,10 +274,14 @@
 
 .card-header{
   background-color: #000;
+  display: flex;
+  align-content: center;
+  justify-content: center;
   color: #fff;
   font-size: 1.5em;
   text-align: center;
-  border-radius: 1rem;
+  border-radius: 3rem;
+  border: none;
 }
 
 .card-body{
@@ -291,6 +295,8 @@
   text-align: justify;
   font-size: 1.4em;
   background-color: #000;
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
 .h1-alerta{
@@ -299,6 +305,7 @@
   text-align: center;
   max-width: 100%;
   color: #fff;
+  
 }
 
 .contenedor-user{
@@ -315,11 +322,16 @@
 
 .contenedor-usuarioimagen{
   border-radius: 50%;
+  width: 3rem;
 }
 
 .usuarioimagen{
   border-radius: 50%;
   width: 100%;
+}
+
+.boton12{
+  margin-right: 1rem;
 }
 
 /* -------------------- Breakpoint -480  -------------------- */

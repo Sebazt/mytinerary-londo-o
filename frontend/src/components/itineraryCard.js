@@ -12,6 +12,10 @@ import itinerariesActions from "../redux/actions/itinerariesAction";
 import { connect } from "react-redux";
 import activitiesAction from "../redux/actions/ActivitiesAction";
 import ActivityCard from "./activities";
+import SendIcon from '@mui/icons-material/Send';
+import BuildIcon from '@mui/icons-material/Build';
+import ClearIcon from '@mui/icons-material/Clear';
+
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -58,6 +62,7 @@ function ItineraryAccordion(props) {
       comment: inputText,
     }
     await props.addComment(commentData)
+      setReload(!reload)
       .then(response => setItinerary(response.data.response.nuevoComment), setInputText(""))
   }
 
@@ -172,15 +177,23 @@ function ItineraryAccordion(props) {
 
               <div className="accordion-body">
 
-
+                
                 {props.itinerary?.comments.map(comment =>
                   <>
-                    {comment.userID?._id === props.user?.id ?
+                    {console.log(comment.userID._id)}
+                    {comment.userID._id !== props.user?.id ?
                       
                       <div className="cartacoments" key={comment._id}>
                         
                         <div className="card-header">
                           <h1 className="primer-name"> {comment.userID?.firstName}</h1>
+                          <div className="contenedor-usuarioimagen">
+                            <img
+                              src={comment.userID.photoURL}
+                              alt="eusuario-Comenta"
+                              className="usuarioimagen"
+                            />
+                          </div>
                         </div>
                         <div className="card-body">
                           <p className="card-text">{comment.comment}</p>
@@ -200,8 +213,8 @@ function ItineraryAccordion(props) {
                         </div>
                         <div className="card-body ">
                           <textarea type="text" className="card-text textComments" onChange={(event) => setModifi(event.target.value)} defaultValue={comment.comment} />
-                          <button id={comment._id} onClick={modificarComentario} class="btn btn-primary">Modificar</button>
-                          <button id={comment._id} onClick={eliminarComentario} class="btn btn-primary">Eliminar</button>
+                          <button id={comment._id} onClick={modificarComentario} class="btn btn-primary boton12"><BuildIcon/></button>
+                          <button id={comment._id} onClick={eliminarComentario} class="btn btn-primary boton12"><ClearIcon/></button>
                         </div>
                       </div>
 
@@ -216,7 +229,7 @@ function ItineraryAccordion(props) {
                     </div>
                     <div className="card-body ">
                       <textarea onChange={(event) => setInputText(event.target.value)} className="card-text textComments" value={inputText} />
-                      <button onClick={cargarComentario} className="btn btn-primary">Cargar</button>
+                      <button onClick={cargarComentario} className="btn btn-primary"><SendIcon/></button>
                     </div>
                   </div> :
                   <h1 className="h1-alerta">Sign in and leave your comment </h1>

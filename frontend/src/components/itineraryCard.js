@@ -13,8 +13,8 @@ import { connect } from "react-redux";
 import activitiesAction from "../redux/actions/ActivitiesAction";
 import ActivityCard from "./activities";
 import SendIcon from '@mui/icons-material/Send';
-import BuildIcon from '@mui/icons-material/Build';
-import ClearIcon from '@mui/icons-material/Clear';
+
+
 
 
 const ExpandMore = styled((props) => {
@@ -213,8 +213,8 @@ function ItineraryAccordion(props) {
                         </div>
                         <div className="card-body ">
                           <textarea type="text" className="card-text textComments" onChange={(event) => setModifi(event.target.value)} defaultValue={comment.comment} />
-                          <button id={comment._id} onClick={modificarComentario} class="btn btn-primary boton12"><BuildIcon/></button>
-                          <button id={comment._id} onClick={eliminarComentario} class="btn btn-primary boton12"><ClearIcon/></button>
+                          <button id={comment._id} onClick={modificarComentario} class="btn btn-primary boton12">Modify</button>
+                          <button id={comment._id} onClick={eliminarComentario} class="btn btn-primary boton12">Delete</button>
                         </div>
                       </div>
 

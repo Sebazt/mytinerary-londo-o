@@ -188,9 +188,15 @@ function ItineraryAccordion(props) {
                       </div> :
 
                       <div className="cartacoments">
-                        <div className="card-header primer-name">
+                        <div className="card-header contenedor-user">
                           <h1 className="primer-name">{comment.userID.firstName}</h1>
-                          {console.log(comment.userID.firstName)}
+                          <div className="contenedor-usuarioimagen">
+                          <img
+                            src={comment.userID.photoURL}
+                            alt="eusuario-Comenta"
+                            className="usuarioimagen"
+                          />
+                          </div>
                         </div>
                         <div className="card-body ">
                           <textarea type="text" className="card-text textComments" onChange={(event) => setModifi(event.target.value)} defaultValue={comment.comment} />

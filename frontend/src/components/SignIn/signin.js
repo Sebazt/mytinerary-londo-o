@@ -65,7 +65,7 @@ function SignIn(props) {
 
           <div className="container-h2-callhome">
             <h2 className="h2-callhome ">
-              Already have an account? <LinkRouter to={"/signup"} className="h2-callsign"><span >Sign up here !</span></LinkRouter>
+              Don't have an account? <LinkRouter to={"/signup"} className="h2-callsign"><span >Sign up here !</span></LinkRouter>
             </h2>
           </div>
         </form>

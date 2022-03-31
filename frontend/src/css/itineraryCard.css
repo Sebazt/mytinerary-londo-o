@@ -301,9 +301,25 @@
   color: #fff;
 }
 
+.contenedor-user{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
 .primer-name{
-  color: yellow !important;
+  color: #83c5be;
+  font-size: 2rem;
+  margin: 0 2rem 0 0;
+}
+
+.contenedor-usuarioimagen{
+  border-radius: 50%;
+}
+
+.usuarioimagen{
+  border-radius: 50%;
+  width: 100%;
 }
 
 /* -------------------- Breakpoint -480  -------------------- */

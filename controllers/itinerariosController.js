@@ -6,7 +6,7 @@ const itinerariesController = {
 
     obtenerItineraries: async (req, res) => {
         let itineraries
-        let error = null
+        let error = null        
         try {
             itineraries = await Itineraries.find()
         } catch (err) {
@@ -22,7 +22,6 @@ const itinerariesController = {
     obtenerUnItinerario: async (req, res) => {
         const id = req.params.id
         console.log(req.params)
-
         let ciudad
         let error = null
 
@@ -81,14 +80,17 @@ const itinerariesController = {
     },
 
     obtenerItinerarioPorIdCiudad: async (req, res) => {
+        console.log("soy obtener itinerarios 2222")
+
         try {
             let itinerarie
             const id = req.params.id
             try {
-                itinerarie = await Itineraries.find({ ciudad: id })
+                itinerarie = await Itineraries.find({ ciudad: id }).populate("comments.userID", { firstName: 1, photoURL: 1 })
             } catch (error) {
                 console.log(error)
             }
+            console.log(itinerarie)
             res.json({ respuesta: itinerarie, success: true })
 
         } catch (error) {

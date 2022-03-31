@@ -47,7 +47,7 @@ const itinerariesActions = {
     },
 
     filterItinerarieForCity: (id) => {
-
+        
         return async (dispatch, getState) => {
             const res = await axios.get(`https://mytinerary-sebastian.herokuapp.com/api/allitineraries/ciudad/${id}`)
             dispatch({ type: "filterItinerarieForCities", payload: res.data.respuesta })

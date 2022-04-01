@@ -15,8 +15,8 @@ const activitiesAction = {
 
       const res = await axios.get("https://mytinerary-sebastian.herokuapp.com/api/allactivities/" + id)
       console.log(res)
-      dispatch({ type: 'fetchearUnaActivity', payload: res.data.response.activities })
-
+      //dispatch({ type: 'fetchearUnaActivity', payload: res.data.response.activities })
+      return(res.data.response.activities)
     }
   },
 

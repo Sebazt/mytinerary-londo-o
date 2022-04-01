@@ -1,20 +1,20 @@
 import React from "react";
 import activitiesAction from '../redux/actions/ActivitiesAction';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import "../css/itineraryCard.css";
 
 
 function ActivityCard(props) {
-
+  const[data, setData] = useState()
   useEffect(() => {
-    props.fetchearUnaActivity(props.id);
-  }, [])
+    props.fetchearUnaActivity(props.id).then(res=>setData(res))
+  }, []);
 
   return (
     <div className="accordion-hid">
       {console.log(props.activitiesByItinerary)}
-      {props.activitiesByItinerary?.map((activity) => (
+      {data?.map((activity) => (
         <>
           <div className="card-accordion">
             <div className="items-card-accordion">

@@ -19,7 +19,7 @@ function GoogleSignIn(props) {
   return (
     <GoogleLogin
       className="buttonsocial2"
-      clientId="830634743901-7hvtii4m121jrjn8h0g7tb1005vj3je3.apps.googleusercontent.com"
+      clientId="830634743901-5ibeuujb506udesht4amptne28k9cp2i.apps.googleusercontent.com"
       buttonText=" With Google"
       onSuccess={responseGoogle}
       onFailure={responseGoogle}

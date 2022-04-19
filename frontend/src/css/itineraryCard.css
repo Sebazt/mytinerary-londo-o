@@ -1,8 +1,7 @@
-
-.accordion-container{
+.accordion-container {
   display: flex;
   flex-flow: row wrap;
-  margin: .5rem auto 5rem;
+  margin: 0.5rem auto 5rem;
   width: 70%;
   min-height: 70vh;
   background-color: #006d77;
@@ -11,8 +10,7 @@
   justify-content: flex-end;
 }
 
-
-.accordio-sub{
+.accordio-sub {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -22,46 +20,46 @@
   border-bottom-left-radius: 5rem;
 }
 
-.subtitulo-accordion{
+.subtitulo-accordion {
   text-align: center;
   font-size: 3em;
   font-weight: bold;
   color: #000;
-  padding: .2rem;
-  letter-spacing:2px;
+  padding: 0.2rem;
+  letter-spacing: 2px;
 }
 
-.containeruser{
+.containeruser {
   width: 55%;
   height: 16vh;
   align-self: flex-end;
-  margin: .5rem 1rem;
+  margin: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
 }
 
-.photouser-accordion{
-     width: 20%;
-     height: 100%;
-     align-self: center;
-     background-color: seagreen;
-     margin: 2rem 4rem 0 0;
-     -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-     border-radius: 50%;
-     box-shadow: 1px 1px 10px #020202;
+.photouser-accordion {
+  width: 20%;
+  height: 100%;
+  align-self: center;
+  background-color: seagreen;
+  margin: 2rem 4rem 0 0;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px #020202;
 }
 
-.nameuser-accordion{
+.nameuser-accordion {
   font-size: 2em;
   font-weight: bold;
   color: #000;
   align-self: center;
   margin: 0 0 0 7rem;
-  letter-spacing:1px;
+  letter-spacing: 1px;
 }
 
-.userimg{
+.userimg {
   width: 100%;
   height: 100%;
   -moz-border-radius: 50%;
@@ -71,10 +69,9 @@
   object-position: top;
 }
 
-
 /* img, heart, cash, time */
 
-.accordion-items{
+.accordion-items {
   display: flex;
   align-self: flex-end;
   width: 55%;
@@ -84,41 +81,39 @@
   font-size: 1.5em;
 }
 
-.likeDislike{
-   display: flex;
-   font-size: 2em;
-   width: 100%;
-   justify-content: flex-end;
-   margin-right: 5rem;
- }
+.likeDislike {
+  display: flex;
+  font-size: 2em;
+  width: 100%;
+  justify-content: flex-end;
+  margin-right: 5rem;
+}
 
- .botonLike{
-   border: none;
-   background-color: transparent;
-   margin-right: .2rem;
- }
+.botonLike {
+  border: none;
+  background-color: transparent;
+  margin-right: 0.2rem;
+}
 
-
-.item1{
+.item1 {
   width: 7.5%;
   align-self: center;
   object-fit: contain;
   margin: 1rem;
 }
 
-.item2{
+.item2 {
   width: 15%;
   margin: 0 0 0 25rem;
   cursor: pointer;
 }
 
-.item4{
+.item4 {
   display: flex;
   justify-content: space-evenly;
-  
 }
 
-.hastash{
+.hastash {
   font-size: 1.2em;
   color: #000;
   width: 100%;
@@ -127,10 +122,10 @@
   margin: auto 0;
   border-radius: 1rem;
   font-weight: bold;
-  letter-spacing:1px;
+  letter-spacing: 1px;
 }
 
-.duration{
+.duration {
   font-size: 1.1em;
   color: #000;
   width: 100%;
@@ -139,11 +134,10 @@
   margin: 1rem;
   border-radius: 1rem;
   font-weight: 300;
-  letter-spacing:1px;
+  letter-spacing: 1px;
 }
 
-
-.accordion-imgcity{
+.accordion-imgcity {
   width: 25%;
   height: 45%;
   border-radius: 1rem;
@@ -155,7 +149,7 @@
   margin-right: 43rem;
 }
 
-.imgcity-accordion{
+.imgcity-accordion {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -163,37 +157,29 @@
   margin-left: 8rem;
   border-radius: 1rem;
   align-self: center;
- 
 }
-
-
-
 
 /* accordion invisible */
 
-
-
-.container-togle{
+.container-togle {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.boton-acordion{
+.boton-acordion {
   align-self: center;
   border: none;
   border-radius: 1rem;
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: bold;
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: #83c5be;
 }
 
-
-
 /* -------------actividades---------------- */
 
-.accordion-hid{
+.accordion-hid {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -204,17 +190,17 @@
   overflow: hidden;
 }
 
-.card-accordion{
+.card-accordion {
   display: flex;
   flex-flow: column wrap;
   background: linear-gradient(90deg, #83c5bfb9, #83c5c0, #83c5bfb9);
   width: 30%;
   height: 45vh;
-  margin: .7rem;
+  margin: 0.7rem;
   border-radius: 1rem;
 }
 
-.items-card-accordion{
+.items-card-accordion {
   width: 100%;
   height: 100%;
   border-radius: 1rem;
@@ -222,13 +208,12 @@
   flex-direction: column;
 }
 
-
-.containerimg-card{
+.containerimg-card {
   width: 100%;
   height: 80%;
 }
 
-.image-activities{
+.image-activities {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -237,8 +222,8 @@
   border-top-right-radius: 1rem;
 }
 
-.titulo-accordion{
-  margin-top: .5rem;
+.titulo-accordion {
+  margin-top: 0.5rem;
   height: 100%;
   text-align: center;
   font-size: bold;
@@ -247,11 +232,8 @@
   overflow: hidden;
 }
 
-
-
-
 /* -------------------- comments  -------------------- */
-.accordion-body{
+.accordion-body {
   width: 100%;
   height: 60vh;
   margin: 1rem auto;
@@ -262,9 +244,9 @@
   background-attachment: fixed;
   border-radius: 1rem;
   overflow-y: scroll;
-} 
+}
 
-.cartacoments{
+.cartacoments {
   width: 100%;
   margin: auto;
   display: flex;
@@ -272,7 +254,7 @@
   background-color: black;
 }
 
-.card-header{
+.card-header {
   background-color: #000;
   display: flex;
   align-content: center;
@@ -284,11 +266,11 @@
   border: none;
 }
 
-.card-body{
+.card-body {
   background-color: #83c5be;
 }
 
-.card-text{
+.card-text {
   width: 100%;
   min-height: 15vh;
   color: #fff;
@@ -299,357 +281,351 @@
   padding: 1rem;
 }
 
-.h1-alerta{
+.h1-alerta {
   background-color: #000;
   justify-content: center;
   text-align: center;
   max-width: 100%;
   color: #fff;
-  
 }
 
-.contenedor-user{
+.contenedor-user {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.primer-name{
+.primer-name {
   color: #83c5be;
   font-size: 2rem;
   margin: 0 2rem 0 0;
 }
 
-.contenedor-usuarioimagen{
+.contenedor-usuarioimagen {
   border-radius: 50%;
   width: 3rem;
 }
 
-.usuarioimagen{
+.usuarioimagen {
   border-radius: 50%;
   width: 100%;
 }
 
-.boton12{
+.boton12 {
   margin-right: 1rem;
 }
 
 /* -------------------- Breakpoint -480  -------------------- */
-@media (max-width: 480px){
-    /* subtitulo */
-  .accordion-container{
-  flex-flow: column wrap;
-  margin: 1rem auto 2rem;
-  width: 90%;
-  min-height: 70vh;
- }
+@media (max-width: 480px) {
+  /* subtitulo */
+  .accordion-container {
+    flex-flow: column wrap;
+    margin: 1rem auto 2rem;
+    width: 90%;
+    min-height: 70vh;
+  }
 
-
-
- .subtitulo-accordion{
+  .subtitulo-accordion {
     font-size: 1.8em;
-    letter-spacing:.5px;
-    
- }
+    letter-spacing: 0.5px;
+  }
 
- /* user */
- .containeruser{
-   display: flex;
-   margin: auto;
-   justify-content: center;
-   align-items: center;
-   width: 100% !important;
- }
+  /* user */
+  .containeruser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+    justify-content: space-evenly;
+    margin-left: 0px !important;
+  }
 
- .photouser-accordion{
-   position: relative;
-  height: 60%;
-  margin: 0;
-  left: -2rem;
- }
+  .photouser-accordion {
+    display: none;
+    position: relative;
+    height: 60%;
+    margin: 0;
+    left: -2rem;
+  }
 
- .nameuser-accordion{
-   margin: auto;
-   font-size: 1.7em;
- }
+  .nameuser-accordion {
+    text-align: center;
+    margin: 0;
+    font-size: 1.7em;
+  }
 
- .accordion-items{
-   width: 100%;
-   display: flex;
-   margin: auto;
-   align-self: center;
- }
+  .accordion-items {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    align-self: center;
+    justify-content: center;
+  }
 
- 
-/* main accordion */
+  /* main accordion */
 
- 
+  .duration {
+    font-size: 0.85em;
+  }
 
- .duration{
-   font-size: .85em;
- }
+  .item2 {
+    width: 6% !important;
+    margin: 0 0 0 15rem !important;
+    align-self: flex-end;
+  }
 
- .item2{
-   width: 6% !important;
-   margin: 0 0 0 15rem !important;
-   align-self: flex-end;
- }
+  .item4 {
+    display: flex;
+    height: 10vh;
+    margin-top: 1rem;
+  }
 
- .item4{
-   display: flex;
-   height: 10vh;
-   margin-top: 1rem;
-   
-   
- }
+  .item1 {
+    width: 8% !important;
+  }
+  .hastash {
+    font-size: 0.7em;
+    text-align: center;
+  }
 
-.item1{
-   width: 8% !important;
- }
- .hastash{
-   font-size: .7em;
-   text-align: center;
- }
+  .accordion-imgcity {
+    display: none;
+  }
 
- .accordion-imgcity{
-   display: none;
- }
+  .boton-acordion {
+    font-size: 0.6em;
+  }
 
- .boton-acordion{
-   font-size: .6em;
- }
+  .accordion-hid {
+    flex-flow: column wrap;
+  }
 
- .accordion-hid{
-   flex-flow: column wrap;
- }
+  .card-accordion {
+    width: 100% !important;
+  }
 
- .card-accordion{
-  width: 100% !important;
- }
-
-
- 
+  .likeDislike{
+    margin: 1rem auto;
+  }
 }
-
-
-
 
 /* -------------------- Breakpoint -760  -------------------- */
-@media (max-width: 760px){
-    
-.accordion-container{
-  flex-flow: column wrap;
-  margin: 1rem auto 2rem;
-  width: 90%;
-  min-height: 70vh;
-  overflow: hidden;
- }
+@media (max-width: 760px) {
+  .accordion-container {
+    flex-flow: column wrap;
+    margin: 1rem auto 2rem;
+    width: 90%;
+    min-height: 70vh;
+    overflow: hidden;
+  }
 
-
-
- .subtitulo-accordion{
+  .subtitulo-accordion {
     font-size: 1.8em;
-    letter-spacing:.5px;
-    
- }
+    letter-spacing: 0.5px;
+  }
 
- /* user */
- .containeruser{
-   display: flex;
-   margin: auto;
-   justify-content: center;
-   align-items: center;
-   width: 100% !important;
- }
+  /* user */
+  .containeruser {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+  }
 
- .photouser-accordion{
-  height: 80%;
-  margin: auto;
- }
+  .photouser-accordion {
+    height: 80%;
+    margin: auto;
+  }
 
- .userimg{
-   width: 100%;
-   align-self: center;
- }
+  .userimg {
+    width: 100%;
+    align-self: center;
+  }
 
+  .nameuser-accordion {
+    margin: auto;
+    font-size: 1.7em;
+  }
 
- .nameuser-accordion{
-   margin: auto;
-   font-size: 1.7em;
- }
+  .accordion-items {
+    width: 100%;
+    display: flex;
+    margin: 0.5rem auto;
+    align-self: center;
+  }
 
- .accordion-items{
-   width: 100%;
-   display: flex;
-   margin: .5rem auto;
-   align-self: center;
- }
+  /* main accordion */
 
-/* main accordion */
+  .duration {
+    font-size: 0.85em;
+  }
 
- 
+  .item1 {
+    width: 7.5% !important;
+  }
 
- .duration{
-   font-size: .85em;
- }
+  .item2 {
+    width: 15% !important;
 
- .item1{
-   width: 7.5% !important;
- }
+    margin: auto;
+    align-self: flex-end;
+  }
 
- .item2{
-   width: 15% !important;
-   
-   margin: auto;
-   align-self: flex-end;
- }
+  .item4 {
+    display: flex;
+    height: 8vh;
+    margin-top: 1rem;
+  }
 
- .item4{
-   display: flex;
-   height: 8vh;
-   margin-top: 1rem;
-   
-   
- }
+  .hastash {
+    font-size: 0.7em;
+    text-align: center;
+  }
 
- .hastash{
-   font-size: .7em;
-   text-align: center;
- }
+  .accordion-imgcity {
+    display: none;
+  }
 
- .accordion-imgcity{
-   display: none;
- }
+  .boton-acordion {
+    font-size: 0.6em;
+  }
 
- .boton-acordion{
-   font-size: .6em;
- }
-    
- .card-accordion{
-  width: 80%;
- }
-
+  .card-accordion {
+    width: 80%;
+  }
 }
-
-
-
 
 /* -------------------- Breakpoint -1000 -------------------- */
-@media (max-width: 1000px){
-    
-  .accordion-container{
-  flex-flow: column wrap;
-  margin: 1rem auto 2rem;
-  width: 90%;
-  min-height: 70vh;
- }
+@media (max-width: 1000px) {
+  .accordion-container {
+    flex-flow: column wrap;
+    margin: 1rem auto 2rem;
+    width: 90%;
+    min-height: 70vh;
+  }
 
-
-
- .subtitulo-accordion{
+  .subtitulo-accordion {
     font-size: 1.8em;
-    letter-spacing:.5px;
-    
- }
+    letter-spacing: 0.5px;
+  }
 
- /* user */
- .containeruser{
-   display: flex;
-   margin: auto;
-   justify-content: center;
-   align-items: center;
-   width: 55%;
-   
- }
+  /* user */
+  .containeruser {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+  }
 
- .photouser-accordion{
-  height: 80%;
-  margin: auto;
- }
+  .photouser-accordion {
+    height: 80%;
+    margin: auto;
+  }
 
- .userimg{
-   width: 100%;
-   align-self: center;
- }
+  .userimg {
+    width: 100%;
+    align-self: center;
+  }
 
+  .nameuser-accordion {
+    margin: auto;
+    font-size: 1.7em;
+  }
 
- .nameuser-accordion{
-   margin: auto;
-   font-size: 1.7em;
- }
+  .accordion-items {
+    width: 100%;
+    display: flex;
+    margin: 0.5rem auto;
+    align-self: center;
+  }
 
- .accordion-items{
-   width: 100%;
-   display: flex;
-   margin: .5rem auto;
-   align-self: center;
- }
+  /* main accordion */
 
-/* main accordion */
+  .duration {
+    font-size: 0.85em;
+  }
 
- 
+  .item2 {
+    margin: auto;
+    align-self: flex-end;
+  }
 
- .duration{
-   font-size: .85em;
- }
+  .item1 {
+    width: 6%;
+  }
 
- .item2{
-   margin: auto;
-   align-self: flex-end;
- }
+  .item4 {
+    display: flex;
+    height: 8vh;
+    margin-top: 1rem;
+  }
 
- .item1{
-   width: 6%;
- }
+  .hastash {
+    font-size: 0.7em !important;
+    text-align: center;
+  }
 
- .item4{
-   display: flex;
-   height: 8vh;
-   margin-top: 1rem;
- }
+  .accordion-imgcity {
+    display: none;
+  }
 
- .hastash{
-   font-size: .7em !important;
-   text-align: center;
- }
+  .boton-acordion {
+    font-size: 0.6em;
+  }
 
- .accordion-imgcity{
-   display: none;
- }
-
- .boton-acordion{
-   font-size: .6em;
- }
-
- .likeDislike{
-   font-size: 1.5em;
-   justify-content:center;
-   
- }
-    
+  .likeDislike {
+    font-size: 1.5em;
+    justify-content: center;
+  }
 }
 
-
 /* -------------------- Breakpoint -1200 -------------------- */
-@media (max-width: 1200px){
-    .hastash{
-   font-size: 1em;
-   text-align: center;
- }
+@media (max-width: 1200px) {
+  .hastash {
+    font-size: 1em;
+    text-align: center;
+  }
 
- .item2{
-   margin: auto;
-   cursor: pointer;
- }
+  .item2 {
+    margin: auto;
+    cursor: pointer;
+  }
 
- .accordion-imgcity{
-   background-color: #0000;
-   margin-right: 35rem;
- }
- 
+  .accordion-imgcity {
+    background-color: #0000;
+    margin-right: 35rem;
+  }
 }
 
 /* -------------------- Breakpoint -1330 -------------------- */
-@media (max-width: 1500px){
+@media (min-width: 1500px) {
+  .imgcity-accordion {
+    margin-left: 3rem;
+  }
+}
 
+@media (min-width: 1630px) {
+  .accordion-imgcity {
+    margin-right: 50rem;
+  }
+}
+
+@media (min-width: 1846px) {
+  .accordion-imgcity {
+    margin-right: 56rem;
+  }
+}
+
+@media (min-width: 2170px) {
+  .accordion-imgcity {
+    margin-right: 62rem;
+  }
+}
+
+@media (min-width: 2438px) {
+  .accordion-imgcity {
+    margin-right: 70rem;
+  }
 }
